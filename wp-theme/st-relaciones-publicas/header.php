@@ -32,6 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 
 		<div class="header-actions">
+			<a href="<?php echo esc_url( home_url( '/recursos-gratuitos' ) ); ?>" class="badge badge-free header-free-badge"><?php esc_html_e( 'Recursos gratis', 'st-rrpp' ); ?></a>
 			<?php strrpp_currency_switcher(); ?>
 			<a href="<?php echo esc_url( home_url( '/cursos' ) ); ?>" class="btn btn-coral btn-sm"><?php esc_html_e( 'Ver cursos', 'st-rrpp' ); ?></a>
 			<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Abrir menú', 'st-rrpp' ); ?>" aria-expanded="false">☰</button>

@@ -229,6 +229,7 @@
   .dropdown-menu li a:hover { background: var(--color-paper-soft); opacity: 1; }
 
   .header-actions { display: flex; align-items: center; gap: var(--space-2); }
+  .header-free-badge:hover { opacity: .85; }
 
   .currency-switcher {
     display: flex;
@@ -469,6 +470,7 @@
     .header-inner { padding: 12px var(--space-2); gap: var(--space-1); }
     .logo-text small { display: none; }
     .currency-switcher button { padding: 6px 10px; }
+    .header-free-badge { display: none; }
   }
 </style>
 </head>
@@ -504,6 +506,7 @@
       </ul>
     </nav>
     <div class="header-actions">
+      <a href="#" class="badge badge-free header-free-badge">Recursos gratis</a>
       <div class="currency-switcher" aria-label="Selector de moneda">
         <button class="active">ARS</button>
         <button>USD</button>

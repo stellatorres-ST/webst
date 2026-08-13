@@ -51,6 +51,30 @@ WooCommerce + LearnDash.
   - Título, precio, descripción corta (bajada del hero) y cross-sell salen
     directo de los campos estándar de WooCommerce (productos relacionados).
 
+## Ficha de capacitación in company
+
+- `maqueta-in-company.html` — maqueta de referencia con los 8 bloques del
+  brief (hero sin precio, para qué empresas es, qué incluye, modalidades,
+  proceso en 5 pasos, casos/testimonios, formulario de cotización, FAQ
+  para decisores).
+- `wp-theme/st-relaciones-publicas/template-in-company.php` — page template
+  real. Asignar a la página "Capacitaciones In Company" desde Editar
+  página → Atributos de página → Plantilla → "In Company".
+- `wp-theme/st-relaciones-publicas/inc/in-company-form.php` — procesa el
+  formulario de cotización (nombre, empresa, email, teléfono, participantes,
+  modalidad, mensaje), con honeypot anti-spam, y envía un mail a la casilla
+  de administrador de WordPress. Para cambiar el destinatario sin tocar
+  código: hook `strrpp_in_company_quote_to`.
+
+## Banco de referencias (Luzzi Digital / Vilma Núñez)
+
+Decisiones ya incorporadas al sitio: checklist con tildes coral, barra de
+compra sticky en mobile, header minimalista con un solo CTA principal,
+badge "GRATIS" fijo junto al menú (agregado en el header, linkea a
+Recursos gratuitos). Pendientes para cuando se construyan esas páginas:
+franja de testimonios/prensa con fondo sólido en "Sobre ST", y uso de
+highlighter de color en los textos largos de autoridad de esa sección.
+
 ## Pendiente (próximos pasos sugeridos)
 
 1. Instalar el theme en WordPress, configurar WooCommerce + LearnDash.
@@ -59,8 +83,8 @@ WooCommerce + LearnDash.
    Stella Torres, Contacto) y los 4 menús de footer.
 3. Vincular cada producto WooCommerce (curso) con su curso de LearnDash
    para que la compra dé acceso automático.
-4. Ficha de capacitación in company (8 bloques, sin precio) + formulario de
-   cotización.
+4. Páginas institucionales: Sobre ST, Servicios, Stella Torres (marca
+   personal), Contacto.
 5. Escritorio del alumno (vista LearnDash logueada).
 6. Selector de moneda: integrar conversión real (API de tipo de cambio) o
    plugin de multi-currency para WooCommerce.
