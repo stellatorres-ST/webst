@@ -76,3 +76,4 @@ require STRRPP_DIR . '/inc/template-tags.php';
 require STRRPP_DIR . '/inc/course-meta.php';
 require STRRPP_DIR . '/inc/in-company-form.php';
 require STRRPP_DIR . '/inc/contact-form.php';
+require STRRPP_DIR . '/inc/recursos-cpt.php';

@@ -104,15 +104,31 @@ Stella se puede editar directo desde el editor de WordPress (usan
 `the_content()` si la página tiene contenido cargado, si no muestran el
 texto de ejemplo).
 
+## Blog y Recursos gratuitos
+
+- `maqueta-blog.html` / `index.php` + `single.php` — catálogo del blog con
+  filtro de categorías (pills, resaltan la activa) y vista de post
+  individual. Usa el sistema nativo de posts y categorías de WordPress,
+  no requiere configuración adicional.
+- `maqueta-recursos.html` / `template-recursos-gratuitos.php` — biblioteca
+  de recursos gratuitos con tarjeta y CTA propio por recurso (patrón
+  Vilma Núñez), en vez de un botón único genérico. Cada recurso es un
+  post del custom post type **"Recursos gratuitos"** (`inc/recursos-cpt.php`),
+  con 2 custom fields:
+  - `_st_recurso_icon` — un emoji para el ícono de la card (ej. `📄`).
+  - `_st_recurso_file` — URL del archivo a descargar.
+  El extracto del post se usa como descripción corta de la card.
+
 ## Pendiente (próximos pasos sugeridos)
 
 1. Instalar el theme en WordPress, configurar WooCommerce + LearnDash.
 2. Crear las páginas del menú principal (Inicio, Sobre ST, Servicios,
    Cursos, In Company, Blog, Recursos, Stella Torres, Contacto), asignar
    su plantilla correspondiente, y cargar el menú en Apariencia > Menús.
+   "Blog" se configura como página de entradas desde Ajustes > Lectura.
 3. Vincular cada producto WooCommerce (curso) con su curso de LearnDash
    para que la compra dé acceso automático.
-4. Blog + Recursos gratuitos (catálogo de guías/plantillas descargables).
+4. Cargar contenido real: posts del blog, recursos gratuitos, cursos.
 5. Escritorio del alumno (vista LearnDash logueada).
 6. Selector de moneda: integrar conversión real (API de tipo de cambio) o
    plugin de multi-currency para WooCommerce.

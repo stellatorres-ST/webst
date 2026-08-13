@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — ST Relaciones Públicas (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-paper: #F7F8F3; --color-navy: #012C3D; --color-teal: #78BDC4; --color-coral: #F8444F;
+    --color-navy-soft: #0a3a4d; --color-paper-soft: #eceee4; --color-teal-soft: #e4f2f3;
+    --font-heading: 'Montserrat', sans-serif; --font-body: 'Montserrat', sans-serif; --font-data: 'Roboto Condensed', sans-serif;
+    --fw-bold: 700; --fw-medium: 500;
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-pill: 999px;
+    --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 40px; --space-5: 64px; --space-6: 96px;
+    --shadow-sm: 0 2px 8px rgba(1,44,61,0.08); --shadow-md: 0 8px 24px rgba(1,44,61,0.12);
+    --container: 1180px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-weight: var(--fw-medium); color: var(--color-navy); background: var(--color-paper); line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-bold); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { margin: 0 0 var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .data { font-family: var(--font-data); }
+  section { padding: var(--space-5) 0; }
+  .breadcrumb { font-family: var(--font-data); font-size: 13px; opacity: .6; padding: var(--space-2) 0; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: var(--radius-pill); font-family: var(--font-data); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .badge-teal { background: var(--color-teal-soft); color: var(--color-navy); border: 1px solid var(--color-teal); }
+
+  .blog-hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-5) 0; text-align: center; }
+  .blog-hero h1 { font-size: 34px; color: #fff; }
+  .blog-hero p { opacity: .8; max-width: 480px; margin: 0 auto; }
+
+  .filtros { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: var(--space-3) 0; }
+  .filtro-pill { padding: 8px 18px; border-radius: var(--radius-pill); background: #fff; border: 1px solid rgba(1,44,61,.15); font-family: var(--font-heading); font-weight: 700; font-size: 13px; }
+  .filtro-pill.active { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }
+
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .blog-card { background: #fff; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+  .blog-card:hover { box-shadow: var(--shadow-md); }
+  .blog-card .thumb { aspect-ratio: 16/10; background: var(--color-teal-soft); }
+  .blog-card .body { padding: var(--space-3); display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .blog-card h3 { font-size: 16px; }
+  .blog-card .excerpt { font-size: 13px; opacity: .75; margin: 0; flex: 1; }
+  .blog-card .meta { font-family: var(--font-data); font-size: 12px; opacity: .55; margin-top: auto; padding-top: 8px; }
+
+  .pagination { display: flex; justify-content: center; gap: 8px; margin-top: var(--space-4); font-family: var(--font-data); }
+  .pagination a { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid rgba(1,44,61,.15); font-weight: 700; }
+  .pagination a.active { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }
+
+  @media (max-width: 900px) {
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container breadcrumb"><a href="maqueta-st-rrpp.html">Inicio</a> / Blog</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Notas sobre Relaciones Públicas, comunicación estratégica y marketing, escritas para aplicar.</p>
+  </div>
+</section>
+
+<div class="container filtros">
+  <a href="#" class="filtro-pill active">Todas</a>
+  <a href="#" class="filtro-pill">Tendencias</a>
+  <a href="#" class="filtro-pill">Herramientas</a>
+  <a href="#" class="filtro-pill">Casos de éxito</a>
+  <a href="#" class="filtro-pill">Comunicación de crisis</a>
+</div>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="badge badge-teal">Tendencias</span>
+          <h3>Cómo construir una estrategia de comunicación en 2026</h3>
+          <p class="excerpt">Los pasos concretos para armar un plan de comunicación que no se quede en la teoría.</p>
+          <span class="meta">12 ago 2026 · 6 min de lectura</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="badge badge-teal">Herramientas</span>
+          <h3>5 métricas clave para medir RRPP</h3>
+          <p class="excerpt">Más allá del clipping: cómo reportar resultados de comunicación con datos.</p>
+          <span class="meta">5 ago 2026 · 4 min de lectura</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="badge badge-teal">Casos de éxito</span>
+          <h3>Cómo una pyme ordenó su comunicación en 3 meses</h3>
+          <p class="excerpt">Caso real de una capacitación in company y sus resultados concretos.</p>
+          <span class="meta">28 jul 2026 · 5 min de lectura</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="badge badge-teal">Comunicación de crisis</span>
+          <h3>El protocolo de crisis que toda empresa debería tener</h3>
+          <p class="excerpt">Los elementos mínimos de un protocolo, explicados con ejemplos reales.</p>
+          <span class="meta">15 jul 2026 · 7 min de lectura</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="badge badge-teal">Herramientas</span>
+          <h3>Cómo armar tu base de contactos de prensa desde cero</h3>
+          <p class="excerpt">Una guía práctica para construir y mantener tu propia base de medios.</p>
+          <span class="meta">2 jul 2026 · 5 min de lectura</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="badge badge-teal">Tendencias</span>
+          <h3>RRPP digitales: qué cambió y qué se mantiene igual</h3>
+          <p class="excerpt">Un repaso de lo que sigue funcionando de las RRPP tradicionales.</p>
+          <span class="meta">20 jun 2026 · 6 min de lectura</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

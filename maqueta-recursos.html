@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursos gratuitos — ST Relaciones Públicas (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-paper: #F7F8F3; --color-navy: #012C3D; --color-teal: #78BDC4; --color-coral: #F8444F;
+    --color-navy-soft: #0a3a4d; --color-paper-soft: #eceee4; --color-teal-soft: #e4f2f3;
+    --font-heading: 'Montserrat', sans-serif; --font-body: 'Montserrat', sans-serif; --font-data: 'Roboto Condensed', sans-serif;
+    --fw-bold: 700; --fw-medium: 500;
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-pill: 999px;
+    --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 40px; --space-5: 64px; --space-6: 96px;
+    --shadow-sm: 0 2px 8px rgba(1,44,61,0.08); --shadow-md: 0 8px 24px rgba(1,44,61,0.12);
+    --container: 1180px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-weight: var(--fw-medium); color: var(--color-navy); background: var(--color-paper); line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-bold); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { margin: 0 0 var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .data { font-family: var(--font-data); }
+  section { padding: var(--space-5) 0; }
+  .breadcrumb { font-family: var(--font-data); font-size: 13px; opacity: .6; padding: var(--space-2) 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-pill); font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: 14px; border: 2px solid transparent; cursor: pointer; }
+  .btn-coral { background: var(--color-coral); color: #fff; box-shadow: var(--shadow-sm); }
+  .btn-block { width: 100%; }
+  .badge-free { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: var(--radius-pill); font-family: var(--font-data); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; background: var(--color-navy); color: #fff; }
+
+  .recursos-hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-5) 0; text-align: center; }
+  .recursos-hero h1 { font-size: 34px; color: #fff; }
+  .recursos-hero p { opacity: .8; max-width: 520px; margin: 0 auto; }
+
+  .recursos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .recurso-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-3); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px; border-top: 4px solid var(--color-teal); }
+  .recurso-card .icon { width: 44px; height: 44px; border-radius: 10px; background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .recurso-card .top-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  .recurso-card h3 { font-size: 16px; }
+  .recurso-card p { font-size: 13px; opacity: .8; margin: 0; flex: 1; }
+
+  @media (max-width: 900px) {
+    .recursos-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container breadcrumb"><a href="maqueta-st-rrpp.html">Inicio</a> / Recursos gratuitos</div>
+
+<section class="recursos-hero">
+  <div class="container">
+    <h1>Recursos gratuitos</h1>
+    <p>Guías, plantillas y checklists listos para usar en tu trabajo de comunicación. Sin costo, descarga inmediata.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="recursos-grid">
+      <div class="recurso-card">
+        <div class="top-row">
+          <div class="icon">📄</div>
+          <span class="badge-free">Gratis</span>
+        </div>
+        <h3>Guía de comunicación de crisis</h3>
+        <p>Los pasos mínimos para armar un protocolo de crisis en tu empresa.</p>
+        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+      </div>
+      <div class="recurso-card">
+        <div class="top-row">
+          <div class="icon">📋</div>
+          <span class="badge-free">Gratis</span>
+        </div>
+        <h3>Plantilla de plan de RRPP</h3>
+        <p>Editable, lista para completar con los objetivos de tu próxima campaña.</p>
+        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+      </div>
+      <div class="recurso-card">
+        <div class="top-row">
+          <div class="icon">✅</div>
+          <span class="badge-free">Gratis</span>
+        </div>
+        <h3>Checklist de prensa</h3>
+        <p>Todo lo que no te podés olvidar antes de enviar una gacetilla.</p>
+        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+      </div>
+      <div class="recurso-card">
+        <div class="top-row">
+          <div class="icon">📊</div>
+          <span class="badge-free">Gratis</span>
+        </div>
+        <h3>Planilla de medición de RRPP</h3>
+        <p>Plantilla en Excel/Sheets para trackear cobertura y resultados.</p>
+        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+      </div>
+      <div class="recurso-card">
+        <div class="top-row">
+          <div class="icon">🗂️</div>
+          <span class="badge-free">Gratis</span>
+        </div>
+        <h3>Base de contactos de prensa (modelo)</h3>
+        <p>Estructura sugerida para armar tu propia base de medios.</p>
+        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+      </div>
+      <div class="recurso-card">
+        <div class="top-row">
+          <div class="icon">🎙️</div>
+          <span class="badge-free">Gratis</span>
+        </div>
+        <h3>Guía de media training básico</h3>
+        <p>Preparación rápida para una entrevista de prensa o TV.</p>
+        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
