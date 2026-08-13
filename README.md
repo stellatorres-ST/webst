@@ -4,6 +4,21 @@ Sitio institucional + LMS de ST Relaciones Públicas (consultoría y capacitaci�
 Relaciones Públicas, Marketing Estratégico y Comunicación), sobre WordPress +
 WooCommerce + LearnDash.
 
+## Sistema tipográfico (actualizado)
+
+El brief original definía Montserrat + Roboto Condensed como "no negociable".
+Por pedido explícito se reemplazó por:
+
+- **Montserrat** (700/800) — títulos (`--font-heading`), sin cambios.
+- **Karla** (400/500/600/700) — texto de cuerpo y datos (`--font-body`,
+  `--font-data`), reemplaza a Montserrat Medium y Roboto Condensed.
+- **Playfair Display** (italic 500/600) — fuente de acento para `.highlight`
+  (el resaltado tipo marcador en textos de autoridad de "Sobre ST" y
+  "Stella Torres"), variable `--font-accent`.
+
+Aplicado de forma consistente en las 10 maquetas y en
+`assets/css/main.css` + el enqueue de Google Fonts en `functions.php`.
+
 ## Contenido de este repo
 
 - `maqueta-st-rrpp.html` — maqueta estática de referencia de la homepage.

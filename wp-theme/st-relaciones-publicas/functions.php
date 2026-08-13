@@ -55,7 +55,7 @@ add_action( 'widgets_init', 'strrpp_widgets_init' );
 function strrpp_assets() {
 	wp_enqueue_style(
 		'strrpp-fonts',
-		'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Karla:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap',
 		array(),
 		null
 	);

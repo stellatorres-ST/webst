@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ST Relaciones Públicas — Maqueta de referencia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Karla:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   /* ============ DESIGN TOKENS — fuente de verdad ============ */
   :root {
@@ -19,8 +19,9 @@
     --color-teal-soft: #e4f2f3;
 
     --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
-    --font-data: 'Roboto Condensed', sans-serif;
+    --font-body: 'Karla', sans-serif;
+    --font-data: 'Karla', sans-serif;
+    --font-accent: 'Playfair Display', serif;
 
     --fw-bold: 700;
     --fw-medium: 500;
@@ -109,12 +110,15 @@
   .badge-coral { background: var(--color-coral); color: #fff; }
 
   .highlight {
-    background: var(--color-teal-soft);
-    border-radius: 4px;
-    padding: 1px 6px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
+  background: var(--color-teal-soft);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 600;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 
   .check-item {
     display: flex;

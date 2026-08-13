@@ -41,7 +41,7 @@ $categories = get_categories( array( 'hide_empty' => false ) );
 <section style="padding-top:0;">
 	<div class="container">
 		<?php if ( have_posts() ) : ?>
-			<div class="blog-grid">
+			<div class="blog-archive-grid">
 				<?php
 				while ( have_posts() ) :
 					the_post();
