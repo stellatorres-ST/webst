@@ -153,24 +153,81 @@
     margin: 0 auto;
     gap: var(--space-3);
   }
+  /* Logo placeholder: monograma + wordmark en dos líneas. Reemplazar
+     .logo-mark por <img> cuando esté el archivo de marca definitivo;
+     mantener las proporciones y no aplicar sombras/rotación al isotipo. */
   .logo {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: -.01em;
-    color: var(--color-navy);
+    display: flex;
+    align-items: center;
+    gap: 10px;
     white-space: nowrap;
   }
-  .logo span { color: var(--color-coral); }
-  .main-nav { display: flex; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
+  .logo-mark {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-navy);
+    color: var(--color-paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -.02em;
+    position: relative;
+  }
+  .logo-mark::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-coral);
+    border: 2px solid var(--color-paper);
+  }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-text strong { font-family: var(--font-heading); font-weight: 800; font-size: 16px; color: var(--color-navy); }
+  .logo-text small { font-family: var(--font-data); font-weight: 700; font-size: 10px; letter-spacing: .14em; color: var(--color-coral); text-transform: uppercase; }
+
+  .main-nav { display: flex; align-items: center; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+  .main-nav > li { position: relative; }
   .main-nav a {
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 4px;
+    font-size: 13.5px;
     font-weight: var(--fw-bold);
     font-family: var(--font-heading);
     color: var(--color-navy);
     opacity: .85;
   }
   .main-nav a:hover { opacity: 1; color: var(--color-coral); }
+  .main-nav .caret { font-size: 10px; opacity: .6; }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #fff;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 8px;
+    z-index: 10;
+  }
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown:focus-within .dropdown-menu { display: block; }
+  .dropdown-menu li a { padding: 10px 12px; border-radius: var(--radius-sm); opacity: .8; }
+  .dropdown-menu li a:hover { background: var(--color-paper-soft); opacity: 1; }
+
   .header-actions { display: flex; align-items: center; gap: var(--space-2); }
 
   .currency-switcher {
@@ -209,7 +266,26 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    flex: none;
   }
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-2) var(--space-3) var(--space-3);
+    background: var(--color-paper);
+    border-bottom: 1px solid rgba(1,44,61,.08);
+  }
+  .mobile-nav.is-open { display: flex; }
+  .mobile-nav a {
+    padding: 12px 4px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color-navy);
+    border-bottom: 1px solid rgba(1,44,61,.06);
+  }
+  .mobile-nav .sub a { padding-left: 20px; font-weight: 500; font-size: 14px; opacity: .8; }
 
   /* ============ Hero ============ */
   .hero {
@@ -376,14 +452,23 @@
     z-index: 200;
   }
 
-  @media (max-width: 900px) {
+  /* Colapsa a menú mobile antes de que el menú largo se apriete contra
+     el selector de moneda y el CTA (pasa ~1150-1250px con 7 ítems). */
+  @media (max-width: 1180px) {
     .main-nav, .header-actions .btn { display: none; }
     .menu-toggle { display: flex; }
+  }
+  @media (max-width: 900px) {
     .hero-inner, .incompany-inner, .stella-inner, .blog-grid { grid-template-columns: 1fr; }
     .pilares-grid, .cursos-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .mobile-buybar { display: flex; }
     .hero h1 { font-size: 32px; }
+  }
+  @media (max-width: 480px) {
+    .header-inner { padding: 12px var(--space-2); gap: var(--space-1); }
+    .logo-text small { display: none; }
+    .currency-switcher button { padding: 6px 10px; }
   }
 </style>
 </head>
@@ -391,16 +476,29 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="#" class="logo">ST <span>Relaciones Públicas</span></a>
-    <nav>
+    <a href="#" class="logo">
+      <span class="logo-mark" aria-hidden="true">ST</span>
+      <span class="logo-text"><strong>Relaciones</strong><small>Públicas</small></span>
+    </a>
+    <nav aria-label="Menú principal">
       <ul class="main-nav">
         <li><a href="#">Inicio</a></li>
-        <li><a href="#">Sobre ST</a></li>
-        <li><a href="#">Servicios</a></li>
+        <li class="has-dropdown">
+          <a href="#">Sobre ST <span class="caret">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Servicios</a></li>
+          </ul>
+        </li>
         <li><a href="#">Cursos</a></li>
         <li><a href="#">In Company</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Recursos</a></li>
+        <li class="has-dropdown">
+          <a href="#">Recursos <span class="caret">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Recursos gratuitos</a></li>
+          </ul>
+        </li>
         <li><a href="#">Stella Torres</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
@@ -411,9 +509,27 @@
         <button>USD</button>
       </div>
       <a href="#" class="btn btn-coral btn-sm">Ver cursos</a>
-      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
     </div>
   </div>
+
+  <nav class="mobile-nav" aria-label="Menú mobile">
+    <a href="#">Inicio</a>
+    <a href="#">Sobre ST</a>
+    <div class="sub">
+      <a href="#">Quiénes somos</a>
+      <a href="#">Servicios</a>
+    </div>
+    <a href="#">Cursos</a>
+    <a href="#">In Company</a>
+    <a href="#">Recursos</a>
+    <div class="sub">
+      <a href="#">Blog</a>
+      <a href="#">Recursos gratuitos</a>
+    </div>
+    <a href="#">Stella Torres</a>
+    <a href="#">Contacto</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -611,5 +727,13 @@
   <a href="#" class="btn btn-coral btn-sm">Comprar curso</a>
 </div>
 
+<script>
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('.mobile-nav');
+  toggle.addEventListener('click', function () {
+    var isOpen = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
 </body>
 </html>

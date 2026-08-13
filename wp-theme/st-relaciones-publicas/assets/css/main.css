@@ -144,25 +144,82 @@ section { padding: var(--space-6) 0; }
   margin: 0 auto;
   gap: var(--space-3);
 }
+/* Logo placeholder: monograma navy "ST" + wordmark en dos líneas.
+   Reemplazar .logo-mark por el isotipo definitivo (the_custom_logo())
+   cuando esté el archivo de marca; no estirar/rotar/recolorear el isotipo. */
 .logo {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: -.01em;
-  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
   white-space: nowrap;
 }
-.logo span { color: var(--color-coral); }
+.logo-mark {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-navy);
+  color: var(--color-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -.02em;
+  position: relative;
+}
+.logo-mark::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-coral);
+  border: 2px solid var(--color-paper);
+}
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-text strong { font-family: var(--font-heading); font-weight: 800; font-size: 16px; color: var(--color-navy); }
+.logo-text small { font-family: var(--font-data); font-weight: 700; font-size: 10px; letter-spacing: .14em; color: var(--color-coral); text-transform: uppercase; }
 .logo img { max-height: 40px; }
-.main-nav { display: flex; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
+
+.main-nav { display: flex; align-items: center; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+.main-nav li { position: relative; }
 .main-nav a {
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  font-size: 13.5px;
   font-weight: var(--fw-bold);
   font-family: var(--font-heading);
   color: var(--color-navy);
   opacity: .85;
 }
 .main-nav a:hover, .main-nav .current-menu-item > a { opacity: 1; color: var(--color-coral); }
+.main-nav li.menu-item-has-children > a::after { content: "▾"; font-size: 10px; opacity: .6; margin-left: 2px; }
+
+.main-nav ul.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 8px;
+  z-index: 10;
+}
+.main-nav li:hover > ul.sub-menu,
+.main-nav li:focus-within > ul.sub-menu { display: block; }
+.main-nav ul.sub-menu a { padding: 10px 12px; border-radius: var(--radius-sm); opacity: .8; }
+.main-nav ul.sub-menu a:hover { background: var(--color-paper-soft); opacity: 1; }
+
 .header-actions { display: flex; align-items: center; gap: var(--space-2); }
 
 .currency-switcher {
@@ -203,18 +260,22 @@ section { padding: var(--space-6) 0; }
 .mobile-nav {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   padding: var(--space-2) var(--space-3) var(--space-3);
   background: var(--color-paper);
   border-bottom: 1px solid rgba(1,44,61,.08);
 }
 .mobile-nav.is-open { display: flex; }
+.mobile-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .mobile-nav a {
   padding: 12px 4px;
   font-family: var(--font-heading);
   font-weight: 700;
+  font-size: 15px;
+  color: var(--color-navy);
   border-bottom: 1px solid rgba(1,44,61,.06);
 }
+.mobile-nav ul.sub-menu a { padding-left: 20px; font-weight: 500; font-size: 14px; opacity: .8; }
 
 /* ============ Hero ============ */
 .hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-6) 0; position: relative; overflow: hidden; }
@@ -306,12 +367,21 @@ section { padding: var(--space-6) 0; }
 .mobile-buybar .price { font-family: var(--font-data); font-weight: 700; font-size: 18px; }
 .mobile-buybar .price small { font-weight: 400; font-size: 12px; opacity: .6; }
 
-@media (max-width: 900px) {
+/* Colapsa a menú mobile antes de que el menú se apriete contra el
+   selector de moneda y el CTA (pasa ~1150-1250px con el menú completo). */
+@media (max-width: 1180px) {
   .main-nav, .header-actions .btn { display: none; }
   .menu-toggle { display: flex; }
+}
+@media (max-width: 900px) {
   .hero-inner, .incompany-inner, .stella-inner, .blog-grid { grid-template-columns: 1fr; }
   .pilares-grid, .cursos-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   body.has-mobile-buybar .mobile-buybar { display: flex; }
   .hero h1 { font-size: 32px; }
+}
+@media (max-width: 480px) {
+  .header-inner { padding: 12px var(--space-2); gap: var(--space-1); }
+  .logo-text small { display: none; }
+  .currency-switcher button { padding: 6px 10px; }
 }

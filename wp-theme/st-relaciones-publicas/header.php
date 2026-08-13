@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php if ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
-				ST <span>Relaciones Públicas</span>
+				<span class="logo-mark" aria-hidden="true">ST</span>
+				<span class="logo-text"><strong><?php esc_html_e( 'Relaciones', 'st-rrpp' ); ?></strong><small><?php esc_html_e( 'Públicas', 'st-rrpp' ); ?></small></span>
 			<?php endif; ?>
 		</a>
 
@@ -37,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 
-	<div class="mobile-nav">
-		<?php strrpp_primary_nav( array( 'menu_class' => '' ) ); ?>
-	</div>
+	<nav class="mobile-nav" aria-label="<?php esc_attr_e( 'Menú mobile', 'st-rrpp' ); ?>">
+		<?php strrpp_primary_nav( array( 'menu_class' => '', 'depth' => 0 ) ); ?>
+	</nav>
 </header>
