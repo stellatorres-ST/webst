@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi escritorio — ST Relaciones Públicas (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-paper: #F7F8F3; --color-navy: #012C3D; --color-teal: #78BDC4; --color-coral: #F8444F;
+    --color-navy-soft: #0a3a4d; --color-paper-soft: #eceee4; --color-teal-soft: #e4f2f3;
+    --font-heading: 'Montserrat', sans-serif; --font-body: 'Montserrat', sans-serif; --font-data: 'Roboto Condensed', sans-serif;
+    --fw-bold: 700; --fw-medium: 500;
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-pill: 999px;
+    --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 40px; --space-5: 64px;
+    --shadow-sm: 0 2px 8px rgba(1,44,61,0.08); --shadow-md: 0 8px 24px rgba(1,44,61,0.12);
+    --container: 1180px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-weight: var(--fw-medium); color: var(--color-navy); background: var(--color-paper-soft); line-height: 1.5; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-bold); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .data { font-family: var(--font-data); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-pill); font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: 14px; border: 2px solid transparent; cursor: pointer; }
+  .btn-coral { background: var(--color-coral); color: #fff; box-shadow: var(--shadow-sm); }
+  .btn-outline-navy { background: transparent; border-color: var(--color-navy); color: var(--color-navy); }
+  .btn-sm { padding: 8px 18px; font-size: 13px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: var(--radius-pill); font-family: var(--font-data); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+  .badge-encurso { background: var(--color-teal-soft); color: var(--color-navy); border: 1px solid var(--color-teal); }
+  .badge-completado { background: var(--color-navy); color: #fff; }
+  .badge-sinempezar { background: #fff; color: var(--color-navy); border: 1px solid rgba(1,44,61,.2); }
+
+  .dash-header { background: var(--color-navy); color: #fff; padding: var(--space-4) 0; }
+  .dash-header h1 { color: #fff; font-size: 26px; margin: 0; }
+  .dash-header p { opacity: .75; margin-top: 4px; }
+
+  .dash-nav { background: #fff; border-bottom: 1px solid rgba(1,44,61,.08); }
+  .dash-nav .container { display: flex; gap: var(--space-3); }
+  .dash-nav a { padding: 14px 0; font-family: var(--font-heading); font-weight: 700; font-size: 14px; opacity: .6; border-bottom: 3px solid transparent; }
+  .dash-nav a.active { opacity: 1; color: var(--color-coral); border-bottom-color: var(--color-coral); }
+
+  .dash-section { padding: var(--space-4) 0; }
+  .dash-section h2 { font-size: 18px; }
+
+  .progress-bar { height: 8px; border-radius: var(--radius-pill); background: rgba(1,44,61,.1); overflow: hidden; }
+  .progress-bar span { display: block; height: 100%; background: var(--color-coral); border-radius: var(--radius-pill); }
+
+  /* Continuar donde quedé */
+  .continuar-card { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); overflow: hidden; display: grid; grid-template-columns: .4fr .6fr; }
+  .continuar-thumb { background: linear-gradient(135deg, var(--color-navy), var(--color-navy-soft)); }
+  .continuar-body { padding: var(--space-4); display: flex; flex-direction: column; gap: 10px; }
+  .continuar-body .eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 700; color: var(--color-coral); }
+  .continuar-body h3 { font-size: 22px; }
+  .continuar-progress-row { display: flex; align-items: center; gap: 12px; }
+  .continuar-progress-row .progress-bar { flex: 1; }
+  .continuar-progress-row .pct { font-family: var(--font-data); font-weight: 700; font-size: 14px; }
+
+  /* Mis cursos */
+  .cursos-filtros { display: flex; gap: 8px; margin-bottom: var(--space-3); }
+  .cursos-filtros button { padding: 6px 16px; border-radius: var(--radius-pill); border: 1px solid rgba(1,44,61,.15); background: #fff; font-family: var(--font-heading); font-weight: 700; font-size: 13px; cursor: pointer; }
+  .cursos-filtros button.active { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }
+  .mis-cursos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .mi-curso-card { background: #fff; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .mi-curso-thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, var(--color-teal), var(--color-navy-soft)); position: relative; }
+  .mi-curso-thumb .badge { position: absolute; top: 10px; left: 10px; }
+  .mi-curso-body { padding: var(--space-2); display: flex; flex-direction: column; gap: 10px; }
+  .mi-curso-body h4 { font-size: 15px; margin: 0; }
+  .mi-curso-progress-row { display: flex; align-items: center; gap: 8px; }
+  .mi-curso-progress-row .pct { font-size: 12px; font-weight: 700; }
+
+  /* Certificados */
+  .cert-list { display: flex; flex-direction: column; gap: 10px; }
+  .cert-item { background: #fff; border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .cert-item .info { display: flex; align-items: center; gap: 12px; }
+  .cert-item .icon { width: 36px; height: 36px; border-radius: 8px; background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; }
+  .cert-item h4 { font-size: 14px; margin: 0; }
+  .cert-item .date { font-size: 12px; opacity: .6; }
+  .cert-empty { background: #fff; border-radius: var(--radius-md); padding: var(--space-4); text-align: center; box-shadow: var(--shadow-sm); }
+
+  /* Historial */
+  .historial-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .historial-table th, .historial-table td { text-align: left; padding: 12px 16px; font-size: 14px; }
+  .historial-table th { background: var(--color-paper-soft); font-family: var(--font-heading); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .historial-table tr:not(:last-child) td { border-bottom: 1px solid rgba(1,44,61,.06); }
+  .status-pagado { color: var(--color-teal); font-weight: 700; }
+
+  @media (max-width: 900px) {
+    .continuar-card { grid-template-columns: 1fr; }
+    .continuar-thumb { aspect-ratio: 16/9; }
+    .mis-cursos-grid { grid-template-columns: 1fr; }
+    .historial-table { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="dash-header">
+  <div class="container">
+    <h1>Hola, Julieta 👋</h1>
+    <p>Tenés 2 cursos en curso y 1 completado. ¡Seguí así!</p>
+  </div>
+</header>
+
+<nav class="dash-nav">
+  <div class="container">
+    <a href="#" class="active">Mi escritorio</a>
+    <a href="#">Mis cursos</a>
+    <a href="#">Certificados</a>
+    <a href="#">Compras</a>
+  </div>
+</nav>
+
+<section class="dash-section">
+  <div class="container">
+    <h2>Continuar donde quedé</h2>
+    <div class="continuar-card">
+      <div class="continuar-thumb"></div>
+      <div class="continuar-body">
+        <span class="eyebrow">Módulo 4 de 8</span>
+        <h3>Relaciones Públicas 360°</h3>
+        <div class="continuar-progress-row">
+          <div class="progress-bar"><span style="width:48%"></span></div>
+          <span class="pct data">48%</span>
+        </div>
+        <a href="#" class="btn btn-coral" style="align-self:flex-start;">Continuar curso</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dash-section">
+  <div class="container">
+    <h2>Mis cursos</h2>
+    <div class="cursos-filtros">
+      <button class="active">Todos</button>
+      <button>En curso</button>
+      <button>Completados</button>
+      <button>Sin empezar</button>
+    </div>
+    <div class="mis-cursos-grid">
+      <div class="mi-curso-card">
+        <div class="mi-curso-thumb"><span class="badge badge-encurso">En curso</span></div>
+        <div class="mi-curso-body">
+          <h4>Relaciones Públicas 360°</h4>
+          <div class="mi-curso-progress-row">
+            <div class="progress-bar" style="flex:1;"><span style="width:48%"></span></div>
+            <span class="pct data">48%</span>
+          </div>
+        </div>
+      </div>
+      <div class="mi-curso-card">
+        <div class="mi-curso-thumb"><span class="badge badge-completado">Completado</span></div>
+        <div class="mi-curso-body">
+          <h4>Introducción a la Comunicación Estratégica</h4>
+          <div class="mi-curso-progress-row">
+            <div class="progress-bar" style="flex:1;"><span style="width:100%"></span></div>
+            <span class="pct data">100%</span>
+          </div>
+        </div>
+      </div>
+      <div class="mi-curso-card">
+        <div class="mi-curso-thumb"><span class="badge badge-sinempezar">Sin empezar</span></div>
+        <div class="mi-curso-body">
+          <h4>Marketing Estratégico para RRPP</h4>
+          <div class="mi-curso-progress-row">
+            <div class="progress-bar" style="flex:1;"><span style="width:0%"></span></div>
+            <span class="pct data">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dash-section">
+  <div class="container">
+    <h2>Mis certificados</h2>
+    <div class="cert-list">
+      <div class="cert-item">
+        <div class="info">
+          <div class="icon">🎓</div>
+          <div>
+            <h4>Introducción a la Comunicación Estratégica</h4>
+            <span class="date data">Emitido el 2 ago 2026</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn-outline-navy btn-sm">Descargar PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dash-section">
+  <div class="container">
+    <h2>Historial de compras</h2>
+    <table class="historial-table">
+      <thead>
+        <tr><th>Curso</th><th>Fecha</th><th>Monto</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Relaciones Públicas 360°</td><td class="data">28 jul 2026</td><td class="data">$45.000 ARS</td><td class="status-pagado">Pagado</td></tr>
+        <tr><td>Introducción a la Comunicación Estratégica</td><td class="data">10 jun 2026</td><td class="data">Gratis</td><td class="status-pagado">Pagado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</body>
+</html>

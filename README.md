@@ -115,20 +115,51 @@ texto de ejemplo).
   Vilma Núñez), en vez de un botón único genérico. Cada recurso es un
   post del custom post type **"Recursos gratuitos"** (`inc/recursos-cpt.php`),
   con 2 custom fields:
-  - `_st_recurso_icon` — un emoji para el ícono de la card (ej. `📄`).
+  - `_st_recurso_icon` — un emoji para el ícono de la card (ej. `📄`),
+    se usa solo si el post no tiene imagen destacada.
   - `_st_recurso_file` — URL del archivo a descargar.
-  El extracto del post se usa como descripción corta de la card.
+  - `_st_recurso_cta` — texto del link de descarga sin el "»" final
+    (ej. "Descargar gratis la guía"). Opcional, por defecto
+    "Descargar gratis".
+  El extracto del post se usa como descripción corta de la card. El CTA
+  es un link de texto en coral con flecha (no un botón sólido), y la
+  card usa la imagen destacada del post como visual si está cargada.
+
+## Escritorio del alumno
+
+- `maqueta-escritorio-alumno.html` / `template-escritorio-alumno.php` —
+  vista logueada completa: saludo personalizado, "Continuar donde quedé"
+  (curso en curso con mayor prioridad), grid "Mis cursos" con filtro
+  (Todos/En curso/Completados/Sin empezar, filtra en el cliente sin
+  recargar), "Mis certificados" con descarga PDF y estado vacío
+  motivador, historial de compras (pedidos de WooCommerce).
+- `inc/learndash-integration.php` — todas las funciones que leen datos de
+  LearnDash/WooCommerce son "safe": si los plugins no están activos
+  todavía, devuelven listas vacías en vez de romper la página (se muestra
+  un aviso in-page en su lugar).
+- Al completar un curso (`learndash_course_completed`): se guarda una
+  notificación in-app que aparece una vez arriba del escritorio, y se
+  envía un mail con el link al certificado.
+- **Vista de curso** (menú lateral de módulos/clases, checks de
+  completado, botón "Marcar como completada", barra de progreso): se usa
+  el template nativo de LearnDash (LD30) en vez de reconstruirlo, porque
+  ya cubre todo lo pedido — solo se reskinea con los colores de marca en
+  `assets/css/learndash.css` (se carga automático cuando LearnDash está
+  activo).
+- Requiere estar logueado; si no, redirige al login de WordPress.
 
 ## Pendiente (próximos pasos sugeridos)
 
 1. Instalar el theme en WordPress, configurar WooCommerce + LearnDash.
 2. Crear las páginas del menú principal (Inicio, Sobre ST, Servicios,
-   Cursos, In Company, Blog, Recursos, Stella Torres, Contacto), asignar
-   su plantilla correspondiente, y cargar el menú en Apariencia > Menús.
-   "Blog" se configura como página de entradas desde Ajustes > Lectura.
+   Cursos, In Company, Blog, Recursos, Stella Torres, Contacto, Escritorio
+   del Alumno), asignar su plantilla correspondiente, y cargar el menú en
+   Apariencia > Menús. "Blog" se configura como página de entradas desde
+   Ajustes > Lectura.
 3. Vincular cada producto WooCommerce (curso) con su curso de LearnDash
    para que la compra dé acceso automático.
 4. Cargar contenido real: posts del blog, recursos gratuitos, cursos.
-5. Escritorio del alumno (vista LearnDash logueada).
-6. Selector de moneda: integrar conversión real (API de tipo de cambio) o
+5. Selector de moneda: integrar conversión real (API de tipo de cambio) o
    plugin de multi-currency para WooCommerce.
+6. Reemplazar el logo placeholder (monograma "ST") por el archivo de
+   marca definitivo cuando esté listo.

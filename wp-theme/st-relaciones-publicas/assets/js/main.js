@@ -4,7 +4,31 @@
 	document.addEventListener( 'DOMContentLoaded', function () {
 		initMobileMenu();
 		initCurrencySwitcher();
+		initDashboardFilters();
 	} );
+
+	function initDashboardFilters() {
+		var wrap = document.querySelector( '[data-dash-filtros]' );
+		var grid = document.querySelector( '[data-dash-cursos]' );
+		if ( ! wrap || ! grid ) {
+			return;
+		}
+
+		wrap.addEventListener( 'click', function ( e ) {
+			var btn = e.target.closest( 'button[data-filter]' );
+			if ( ! btn ) {
+				return;
+			}
+			wrap.querySelectorAll( 'button' ).forEach( function ( b ) { b.classList.remove( 'active' ); } );
+			btn.classList.add( 'active' );
+
+			var filter = btn.getAttribute( 'data-filter' );
+			grid.querySelectorAll( '[data-status]' ).forEach( function ( card ) {
+				var show = 'todos' === filter || card.getAttribute( 'data-status' ) === filter;
+				card.style.display = show ? '' : 'none';
+			} );
+		} );
+	}
 
 	function initMobileMenu() {
 		var toggle = document.querySelector( '.menu-toggle' );

@@ -4,10 +4,14 @@
  *
  * Cada recurso (guía, plantilla, checklist) es un post de este tipo.
  * Custom fields del post:
- * - _st_recurso_icon  Un emoji simple para el ícono de la card. Ej: "📄"
+ * - _st_recurso_icon  Un emoji simple para el ícono de la card, se usa
+ *                      solo si el post no tiene imagen destacada cargada.
  * - _st_recurso_file  URL del archivo a descargar (o link externo, ej. a
  *                      un formulario de captura si se quiere gatear la
  *                      descarga más adelante).
+ * - _st_recurso_cta   Texto del link de descarga sin el "»" final
+ *                      (ej. "Descargar gratis la guía"). Si se deja
+ *                      vacío usa "Descargar gratis".
  * El extracto del post (excerpt) se usa como descripción corta de la card.
  */
 

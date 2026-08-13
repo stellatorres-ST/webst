@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Reskin de LearnDash (tema LD30) con los tokens de marca de ST.
+   No reemplaza los templates de LearnDash — el menú lateral de
+   módulos/clases con checks, el botón "Marcar como completada" con
+   avance automático y la barra de progreso ya los provee LearnDash de
+   forma nativa; acá solo se ajustan colores, tipografía y espaciados.
+   ========================================================================== */
+
+/* Barra de progreso del curso */
+.ld-progress .ld-progress-bar { background: var(--color-coral); }
+.ld-progress .ld-progress-heading .ld-status { font-family: var(--font-heading); font-weight: 700; }
+.ld-progress-percentage { font-family: var(--font-data); font-weight: 700; color: var(--color-navy); }
+
+/* Botón "Marcar como completada" y CTAs de LearnDash */
+.learndash_mark_complete_button,
+.ld-button,
+.wpProQuiz_button {
+	background: var(--color-coral) !important;
+	border-color: var(--color-coral) !important;
+	border-radius: 999px !important;
+	font-family: var(--font-heading) !important;
+	font-weight: 700 !important;
+	text-transform: none !important;
+}
+.learndash_mark_complete_button:hover,
+.ld-button:hover {
+	opacity: .9;
+}
+
+/* Menú lateral de módulos/clases */
+.ld-item-list-item.ld-is-current { border-left: 3px solid var(--color-coral); }
+.ld-item-list-item .ld-status-icon.ld-status-icon-completed svg,
+.ld-status-icon-complete svg { fill: var(--color-teal); }
+.ld-item-list-item-preview a,
+.ld-lesson-item, .ld-topic-item {
+	font-family: var(--font-body);
+}
+.ld-item-name { color: var(--color-navy); }
+
+/* Tabs de contenido/materiales dentro del curso */
+.ld-tabs .ld-tabs-navigation .ld-tab-nav-item.ld-active .ld-tab-nav-link {
+	color: var(--color-coral);
+	border-color: var(--color-coral);
+}
+
+/* Certificados */
+.learndash_content_bar_completed { background: var(--color-teal) !important; }

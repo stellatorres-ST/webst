@@ -41,19 +41,24 @@ $recursos = new WP_Query( array(
 				<?php
 				while ( $recursos->have_posts() ) :
 					$recursos->the_post();
-					$file = strrpp_recurso_file( get_the_ID() );
+					$file     = strrpp_recurso_file( get_the_ID() );
+					$cta_text = get_post_meta( get_the_ID(), '_st_recurso_cta', true );
+					$cta_text = $cta_text ? $cta_text : __( 'Descargar gratis', 'st-rrpp' );
 					?>
 					<div class="recurso-card">
-						<div class="top-row">
-							<div class="icon"><?php echo esc_html( strrpp_recurso_icon( get_the_ID() ) ); ?></div>
-							<span class="badge-free"><?php esc_html_e( 'Gratis', 'st-rrpp' ); ?></span>
+						<div class="visual">
+							<?php if ( has_post_thumbnail() ) : ?>
+								<?php the_post_thumbnail( 'medium' ); ?>
+							<?php else : ?>
+								<div class="icon"><?php echo esc_html( strrpp_recurso_icon( get_the_ID() ) ); ?></div>
+							<?php endif; ?>
 						</div>
 						<h3><?php the_title(); ?></h3>
 						<p><?php echo esc_html( get_the_excerpt() ); ?></p>
 						<?php if ( $file ) : ?>
-							<a href="<?php echo esc_url( $file ); ?>" class="btn btn-coral btn-block" target="_blank" rel="noopener"><?php esc_html_e( 'Obtener gratis', 'st-rrpp' ); ?></a>
+							<a href="<?php echo esc_url( $file ); ?>" class="recurso-cta" target="_blank" rel="noopener"><?php echo esc_html( $cta_text ); ?> »</a>
 						<?php else : ?>
-							<a href="<?php the_permalink(); ?>" class="btn btn-coral btn-block"><?php esc_html_e( 'Ver más', 'st-rrpp' ); ?></a>
+							<a href="<?php the_permalink(); ?>" class="recurso-cta"><?php esc_html_e( 'Ver más', 'st-rrpp' ); ?> »</a>
 						<?php endif; ?>
 					</div>
 				<?php endwhile; ?>

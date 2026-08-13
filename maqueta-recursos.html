@@ -35,12 +35,14 @@
   .recursos-hero h1 { font-size: 34px; color: #fff; }
   .recursos-hero p { opacity: .8; max-width: 520px; margin: 0 auto; }
 
-  .recursos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
-  .recurso-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-3); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px; border-top: 4px solid var(--color-teal); }
-  .recurso-card .icon { width: 44px; height: 44px; border-radius: 10px; background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; font-size: 20px; }
-  .recurso-card .top-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-  .recurso-card h3 { font-size: 16px; }
-  .recurso-card p { font-size: 13px; opacity: .8; margin: 0; flex: 1; }
+  .recursos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .recurso-card { background: #fff; border-radius: var(--radius-lg); padding: var(--space-4); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 12px; }
+  .recurso-card .visual { height: 160px; display: flex; align-items: center; justify-content: center; }
+  .recurso-card .visual .icon { width: 72px; height: 72px; border-radius: 16px; background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; font-size: 32px; }
+  .recurso-card h3 { font-size: 19px; }
+  .recurso-card p { font-size: 14px; opacity: .75; margin: 0; }
+  .recurso-cta { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: var(--color-coral); }
+  .recurso-cta:hover { text-decoration: underline; }
 
   @media (max-width: 900px) {
     .recursos-grid { grid-template-columns: 1fr; }
@@ -62,58 +64,40 @@
   <div class="container">
     <div class="recursos-grid">
       <div class="recurso-card">
-        <div class="top-row">
-          <div class="icon">📄</div>
-          <span class="badge-free">Gratis</span>
-        </div>
+        <div class="visual"><div class="icon">📄</div></div>
         <h3>Guía de comunicación de crisis</h3>
         <p>Los pasos mínimos para armar un protocolo de crisis en tu empresa.</p>
-        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+        <a href="#" class="recurso-cta">Descargar gratis la guía »</a>
       </div>
       <div class="recurso-card">
-        <div class="top-row">
-          <div class="icon">📋</div>
-          <span class="badge-free">Gratis</span>
-        </div>
+        <div class="visual"><div class="icon">📋</div></div>
         <h3>Plantilla de plan de RRPP</h3>
         <p>Editable, lista para completar con los objetivos de tu próxima campaña.</p>
-        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+        <a href="#" class="recurso-cta">Acceder gratis »</a>
       </div>
       <div class="recurso-card">
-        <div class="top-row">
-          <div class="icon">✅</div>
-          <span class="badge-free">Gratis</span>
-        </div>
+        <div class="visual"><div class="icon">✅</div></div>
         <h3>Checklist de prensa</h3>
         <p>Todo lo que no te podés olvidar antes de enviar una gacetilla.</p>
-        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+        <a href="#" class="recurso-cta">Descargar gratis el checklist »</a>
       </div>
       <div class="recurso-card">
-        <div class="top-row">
-          <div class="icon">📊</div>
-          <span class="badge-free">Gratis</span>
-        </div>
+        <div class="visual"><div class="icon">📊</div></div>
         <h3>Planilla de medición de RRPP</h3>
         <p>Plantilla en Excel/Sheets para trackear cobertura y resultados.</p>
-        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+        <a href="#" class="recurso-cta">Descargar gratis la planilla »</a>
       </div>
       <div class="recurso-card">
-        <div class="top-row">
-          <div class="icon">🗂️</div>
-          <span class="badge-free">Gratis</span>
-        </div>
+        <div class="visual"><div class="icon">🗂️</div></div>
         <h3>Base de contactos de prensa (modelo)</h3>
         <p>Estructura sugerida para armar tu propia base de medios.</p>
-        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+        <a href="#" class="recurso-cta">Acceder gratis »</a>
       </div>
       <div class="recurso-card">
-        <div class="top-row">
-          <div class="icon">🎙️</div>
-          <span class="badge-free">Gratis</span>
-        </div>
+        <div class="visual"><div class="icon">🎙️</div></div>
         <h3>Guía de media training básico</h3>
         <p>Preparación rápida para una entrevista de prensa o TV.</p>
-        <a href="#" class="btn btn-coral btn-block">Obtener gratis</a>
+        <a href="#" class="recurso-cta">Descargar gratis la guía »</a>
       </div>
     </div>
   </div>

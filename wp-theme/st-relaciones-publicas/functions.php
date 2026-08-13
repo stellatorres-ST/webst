@@ -64,6 +64,10 @@ function strrpp_assets() {
 
 	wp_enqueue_script( 'strrpp-main', STRRPP_URI . '/assets/js/main.js', array(), STRRPP_VERSION, true );
 
+	if ( defined( 'LEARNDASH_VERSION' ) ) {
+		wp_enqueue_style( 'strrpp-learndash', STRRPP_URI . '/assets/css/learndash.css', array( 'strrpp-main' ), STRRPP_VERSION );
+	}
+
 	wp_localize_script( 'strrpp-main', 'strrppData', array(
 		'currency' => strrpp_get_current_currency(),
 	) );
@@ -77,3 +81,4 @@ require STRRPP_DIR . '/inc/course-meta.php';
 require STRRPP_DIR . '/inc/in-company-form.php';
 require STRRPP_DIR . '/inc/contact-form.php';
 require STRRPP_DIR . '/inc/recursos-cpt.php';
+require STRRPP_DIR . '/inc/learndash-integration.php';
