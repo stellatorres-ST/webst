@@ -3,6 +3,8 @@
  * Template Name: Servicios
  *
  * Fuente de referencia: /maqueta-servicios.html
+ * Los 4 pilares de servicio con su listado interno son contenido real del
+ * cliente (no placeholder) — para editarlos hay que tocar este array.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,12 +14,64 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 
 $servicios = array(
-	array( '🎯', __( 'Consultoría en RRPP', 'st-rrpp' ), __( 'Diagnóstico y plan de comunicación estratégico para marcas y organizaciones.', 'st-rrpp' ), home_url( '/contacto' ), __( 'Consultar', 'st-rrpp' ) ),
-	array( '🏢', __( 'Capacitación In Company', 'st-rrpp' ), __( 'Formación a medida para equipos de comunicación, marketing y RRPP.', 'st-rrpp' ), home_url( '/in-company' ), __( 'Ver más', 'st-rrpp' ) ),
-	array( '🎓', __( 'Cursos online', 'st-rrpp' ), __( 'Formación certificada, a tu ritmo, para comunicadores en toda LatAm.', 'st-rrpp' ), home_url( '/cursos' ), __( 'Ver cursos', 'st-rrpp' ) ),
-	array( '🚨', __( 'Comunicación de crisis', 'st-rrpp' ), __( 'Protocolos y acompañamiento en tiempo real ante situaciones críticas.', 'st-rrpp' ), home_url( '/contacto' ), __( 'Consultar', 'st-rrpp' ) ),
-	array( '🎤', __( 'Vocería y media training', 'st-rrpp' ), __( 'Preparación de voceros para entrevistas, prensa y exposición pública.', 'st-rrpp' ), home_url( '/contacto' ), __( 'Consultar', 'st-rrpp' ) ),
-	array( '🔍', __( 'Auditoría de comunicación', 'st-rrpp' ), __( 'Relevamiento completo de la comunicación actual de tu empresa, con recomendaciones concretas.', 'st-rrpp' ), home_url( '/contacto' ), __( 'Consultar', 'st-rrpp' ) ),
+	array(
+		'num'   => '01',
+		'title' => __( 'Estrategia y Consultoría', 'st-rrpp' ),
+		'items' => array(
+			__( 'Marketing estratégico', 'st-rrpp' ),
+			__( 'Estrategia de comunicación', 'st-rrpp' ),
+			__( 'Posicionamiento de marca', 'st-rrpp' ),
+			__( 'Auditoría y diagnóstico', 'st-rrpp' ),
+			__( 'Ecosistema digital', 'st-rrpp' ),
+			__( 'Planes de marketing y comunicación', 'st-rrpp' ),
+		),
+	),
+	array(
+		'num'   => '02',
+		'title' => __( 'Relaciones Públicas y Comunicación', 'st-rrpp' ),
+		'items' => array(
+			__( 'Relaciones Públicas', 'st-rrpp' ),
+			__( 'Comunicación institucional', 'st-rrpp' ),
+			__( 'Comunicación interna', 'st-rrpp' ),
+			__( 'Gestión de públicos y vínculos', 'st-rrpp' ),
+			__( 'Reputación e imagen', 'st-rrpp' ),
+			__( 'Relaciones con medios', 'st-rrpp' ),
+			__( 'Comunicación de crisis', 'st-rrpp' ),
+			__( 'Alianzas estratégicas', 'st-rrpp' ),
+			__( 'Organización y comunicación de eventos', 'st-rrpp' ),
+			__( 'Protocolo y ceremonial', 'st-rrpp' ),
+			__( 'Comunicación turística y territorial', 'st-rrpp' ),
+		),
+	),
+	array(
+		'num'   => '03',
+		'title' => __( 'Marketing Digital', 'st-rrpp' ),
+		'items' => array(
+			__( 'Social Media Management', 'st-rrpp' ),
+			__( 'Community Management', 'st-rrpp' ),
+			__( 'Estrategia de contenidos', 'st-rrpp' ),
+			__( 'Gestión de redes sociales', 'st-rrpp' ),
+			__( 'Campañas digitales', 'st-rrpp' ),
+			__( 'Producción de contenidos', 'st-rrpp' ),
+			__( 'Analítica y métricas', 'st-rrpp' ),
+			__( 'Automatización e IA', 'st-rrpp' ),
+			__( 'Desarrollo de sitios web y landing pages', 'st-rrpp' ),
+		),
+	),
+	array(
+		'num'   => '04',
+		'title' => __( 'Formación y Mentoría', 'st-rrpp' ),
+		'items' => array(
+			__( 'Capacitaciones', 'st-rrpp' ),
+			__( 'Mentorías', 'st-rrpp' ),
+			__( 'Marketing Digital', 'st-rrpp' ),
+			__( 'Relaciones Públicas', 'st-rrpp' ),
+			__( 'Inteligencia Artificial', 'st-rrpp' ),
+			__( 'Social Media', 'st-rrpp' ),
+			__( 'Emprendimiento', 'st-rrpp' ),
+			__( 'Estrategia y gestión de negocios', 'st-rrpp' ),
+		),
+	),
 );
 ?>
 
@@ -39,10 +93,13 @@ $servicios = array(
 		<div class="servicios-grid">
 			<?php foreach ( $servicios as $s ) : ?>
 				<div class="servicio-card">
-					<div class="icon"><?php echo esc_html( $s[0] ); ?></div>
-					<h3><?php echo esc_html( $s[1] ); ?></h3>
-					<p><?php echo esc_html( $s[2] ); ?></p>
-					<a href="<?php echo esc_url( $s[3] ); ?>"><?php echo esc_html( $s[4] ); ?> →</a>
+					<div class="num data"><?php echo esc_html( $s['num'] ); ?></div>
+					<h3><?php echo esc_html( $s['title'] ); ?></h3>
+					<ul class="servicio-lista">
+						<?php foreach ( $s['items'] as $item ) : ?>
+							<li><?php echo esc_html( $item ); ?></li>
+						<?php endforeach; ?>
+					</ul>
 				</div>
 			<?php endforeach; ?>
 		</div>
