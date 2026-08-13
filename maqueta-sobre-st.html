@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre ST — ST Relaciones Públicas (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-paper: #F7F8F3; --color-navy: #012C3D; --color-teal: #78BDC4; --color-coral: #F8444F;
+    --color-navy-soft: #0a3a4d; --color-paper-soft: #eceee4; --color-teal-soft: #e4f2f3;
+    --font-heading: 'Montserrat', sans-serif; --font-body: 'Montserrat', sans-serif; --font-data: 'Roboto Condensed', sans-serif;
+    --fw-bold: 700; --fw-medium: 500;
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-pill: 999px;
+    --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 40px; --space-5: 64px; --space-6: 96px;
+    --shadow-sm: 0 2px 8px rgba(1,44,61,0.08); --shadow-md: 0 8px 24px rgba(1,44,61,0.12); --shadow-lg: 0 16px 48px rgba(1,44,61,0.18);
+    --container: 1180px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-weight: var(--fw-medium); color: var(--color-navy); background: var(--color-paper); line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-bold); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { margin: 0 0 var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .data { font-family: var(--font-data); }
+  section { padding: var(--space-5) 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-pill); font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: 15px; border: 2px solid transparent; cursor: pointer; }
+  .btn-coral { background: var(--color-coral); color: #fff; box-shadow: var(--shadow-sm); }
+  .btn-outline-navy { background: transparent; border-color: var(--color-navy); color: var(--color-navy); }
+  .btn-outline-light { background: transparent; border-color: rgba(247,248,243,.5); color: var(--color-paper); }
+  .breadcrumb { font-family: var(--font-data); font-size: 13px; opacity: .6; padding: var(--space-2) 0; }
+  .section-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .1em; font-size: 13px; font-weight: 700; color: var(--color-coral); margin-bottom: 8px; }
+  .highlight { background: linear-gradient(120deg, var(--color-teal-soft) 0%, var(--color-teal-soft) 100%); background-repeat: no-repeat; background-size: 100% 45%; background-position: 0 85%; padding: 0 2px; }
+
+  /* Hero */
+  .about-hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-6) 0; text-align: center; }
+  .about-hero-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .12em; color: var(--color-teal); font-size: 13px; font-weight: 700; margin-bottom: var(--space-2); }
+  .about-hero h1 { font-size: 40px; color: #fff; max-width: 700px; margin: 0 auto var(--space-2); }
+  .about-hero .lead { font-size: 17px; opacity: .85; max-width: 560px; margin: 0 auto; }
+
+  /* Quiénes somos */
+  .quienes-inner { display: grid; grid-template-columns: .8fr 1.2fr; gap: var(--space-5); align-items: center; }
+  .quienes-visual { aspect-ratio: 4/3; background: var(--color-teal-soft); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-navy); font-family: var(--font-data); }
+  .quienes-text p { font-size: 16px; }
+
+  /* Misión/Visión/Valores */
+  .valores-section { background: var(--color-paper-soft); }
+  .valores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .valor-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-4); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-teal); }
+  .valor-card h3 { font-size: 18px; }
+  .valor-card p { font-size: 14px; opacity: .8; margin: 0; }
+
+  /* Equipo */
+  .equipo-inner { display: grid; grid-template-columns: .5fr 1fr; gap: var(--space-4); align-items: center; background: #fff; border-radius: var(--radius-lg); padding: var(--space-4); box-shadow: var(--shadow-sm); border: 1px solid var(--color-teal); }
+  .equipo-photo { aspect-ratio: 1/1; border-radius: var(--radius-md); background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; color: var(--color-navy); font-family: var(--font-data); }
+
+  /* Testimonios/prensa (franja sólida) */
+  .prensa-section { background: var(--color-navy); color: #fff; text-align: center; }
+  .prensa-section h2 { color: #fff; }
+  .prensa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-top: var(--space-4); }
+  .prensa-quote { background: rgba(247,248,243,.06); border: 1px solid rgba(120,189,196,.25); border-radius: var(--radius-md); padding: var(--space-3); text-align: left; }
+  .prensa-quote p { font-size: 14px; font-style: italic; opacity: .9; }
+  .prensa-quote span { font-family: var(--font-data); font-size: 12px; color: var(--color-teal); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* CTA final */
+  .cta-final { background: var(--color-paper-soft); text-align: center; }
+  .cta-final h2 { font-size: 28px; }
+
+  @media (max-width: 900px) {
+    .quienes-inner, .equipo-inner { grid-template-columns: 1fr; }
+    .valores-grid, .prensa-grid { grid-template-columns: 1fr; }
+    .about-hero h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container breadcrumb"><a href="maqueta-st-rrpp.html">Inicio</a> / Sobre ST</div>
+
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero-eyebrow">Quiénes somos</div>
+    <h1>Comunicación con estrategia, no con improvisación</h1>
+    <p class="lead">ST Relaciones Públicas forma y acompaña a comunicadores y empresas de todo el mundo hispanohablante con un estándar profesional, no genérico.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container quienes-inner">
+    <div class="quienes-visual">[ imagen institucional ]</div>
+    <div class="quienes-text">
+      <div class="section-eyebrow">Nuestra historia</div>
+      <h2>De la consultoría individual a una marca de formación</h2>
+      <p>ST Relaciones Públicas nace de la trayectoria de <span class="highlight">Stella Torres como consultora en comunicación estratégica</span>, y se convierte en una marca de formación para llevar ese mismo estándar profesional a comunicadores y empresas de toda LatAm.</p>
+      <p>Trabajamos con <span class="highlight">un enfoque práctico, sin fórmulas genéricas</span>: cada curso y cada capacitación in company parte de casos reales, no de teoría aislada.</p>
+      <a href="maqueta-st-rrpp.html" class="btn btn-outline-navy">Ver cursos</a>
+    </div>
+  </div>
+</section>
+
+<section class="valores-section">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">Cómo trabajamos</div>
+    <h2 style="text-align:center;">Misión, visión y valores</h2>
+    <div class="valores-grid">
+      <div class="valor-card">
+        <h3>Misión</h3>
+        <p>Formar comunicadores y equipos con herramientas de Relaciones Públicas aplicables desde el primer día.</p>
+      </div>
+      <div class="valor-card">
+        <h3>Visión</h3>
+        <p>Ser la referencia en formación de RRPP en español, dentro y fuera de Argentina.</p>
+      </div>
+      <div class="valor-card">
+        <h3>Valores</h3>
+        <p>Rigor profesional, practicidad y cercanía — sin perder la exclusividad que distingue a ST.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="equipo-inner">
+      <div class="equipo-photo">[ foto Stella Torres ]</div>
+      <div>
+        <div class="section-eyebrow">Dirección académica</div>
+        <h2>Stella Torres</h2>
+        <p>Consultora en Relaciones Públicas y speaker especializada en comunicación estratégica, con trayectoria acompañando marcas y organizaciones en Argentina y LatAm. Dirige el contenido académico de todos los cursos y capacitaciones de ST.</p>
+        <a href="maqueta-stella-torres.html" class="btn btn-outline-navy">Conocer más sobre Stella</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prensa-section">
+  <div class="container">
+    <div class="section-eyebrow" style="color:var(--color-teal);">Lo que dicen de nosotros</div>
+    <h2>Prensa y testimonios</h2>
+    <div class="prensa-grid">
+      <div class="prensa-quote">
+        <p>"Un enfoque de RRPP aplicado, poco común en la formación online en español."</p>
+        <span>[ Medio / publicación ]</span>
+      </div>
+      <div class="prensa-quote">
+        <p>"El curso me dio un marco que hasta ahora manejaba de forma intuitiva."</p>
+        <span>[ Nombre, alumno/a ]</span>
+      </div>
+      <div class="prensa-quote">
+        <p>"La capacitación in company fue clave para ordenar la comunicación de nuestro equipo."</p>
+        <span>[ Empresa cliente ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Querés trabajar con nosotros?</h2>
+    <a href="maqueta-contacto.html" class="btn btn-coral">Contactanos</a>
+  </div>
+</section>
+
+</body>
+</html>

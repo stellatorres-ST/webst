@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stella Torres — Marca personal (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-paper: #F7F8F3; --color-navy: #012C3D; --color-teal: #78BDC4; --color-coral: #F8444F;
+    --color-navy-soft: #0a3a4d; --color-paper-soft: #eceee4; --color-teal-soft: #e4f2f3;
+    --font-heading: 'Montserrat', sans-serif; --font-body: 'Montserrat', sans-serif; --font-data: 'Roboto Condensed', sans-serif;
+    --fw-bold: 700; --fw-medium: 500;
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-pill: 999px;
+    --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 40px; --space-5: 64px; --space-6: 96px;
+    --shadow-sm: 0 2px 8px rgba(1,44,61,0.08); --shadow-md: 0 8px 24px rgba(1,44,61,0.12); --shadow-lg: 0 16px 48px rgba(1,44,61,0.18);
+    --container: 1180px;
+    /* Paleta de marca personal: mismos tokens, distinto énfasis (más teal, menos navy sólido) para diferenciar visualmente de ST comercial sin salirse del sistema. */
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-weight: var(--fw-medium); color: var(--color-navy); background: var(--color-paper); line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-bold); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { margin: 0 0 var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .data { font-family: var(--font-data); }
+  section { padding: var(--space-5) 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-pill); font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: 15px; border: 2px solid transparent; cursor: pointer; }
+  .btn-coral { background: var(--color-coral); color: #fff; box-shadow: var(--shadow-sm); }
+  .btn-outline-navy { background: transparent; border-color: var(--color-navy); color: var(--color-navy); }
+  .breadcrumb { font-family: var(--font-data); font-size: 13px; opacity: .6; padding: var(--space-2) 0; }
+  .section-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .1em; font-size: 13px; font-weight: 700; color: var(--color-coral); margin-bottom: 8px; }
+  .highlight { background: linear-gradient(120deg, var(--color-teal-soft) 0%, var(--color-teal-soft) 100%); background-repeat: no-repeat; background-size: 100% 45%; background-position: 0 85%; padding: 0 2px; }
+
+  /* Marca personal: franja superior distintiva en teal para diferenciar del navy de ST comercial */
+  .personal-bar { background: var(--color-teal); color: var(--color-navy); text-align: center; padding: 8px; font-family: var(--font-data); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+  .stella-hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-6) 0; }
+  .stella-hero-inner { display: grid; grid-template-columns: .7fr 1.3fr; gap: var(--space-5); align-items: center; }
+  .stella-hero-photo { aspect-ratio: 3/4; background: var(--color-navy-soft); border: 1px solid rgba(120,189,196,.25); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-teal); font-family: var(--font-data); }
+  .stella-hero-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .12em; color: var(--color-teal); font-size: 13px; font-weight: 700; margin-bottom: var(--space-2); }
+  .stella-hero h1 { font-size: 38px; color: #fff; }
+  .stella-hero .lead { font-size: 17px; opacity: .85; max-width: 480px; }
+  .stella-hero-ctas { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+  .btn-outline-light { background: transparent; border-color: rgba(247,248,243,.5); color: var(--color-paper); }
+
+  .bio-section p { font-size: 16px; max-width: 760px; }
+
+  .stats-section { background: var(--color-paper-soft); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); text-align: center; }
+  .stat-item .num { font-family: var(--font-data); font-weight: 700; font-size: 34px; color: var(--color-coral); }
+  .stat-item .label { font-size: 13px; opacity: .7; }
+
+  .charlas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .charla-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-3); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-teal); }
+  .charla-card h3 { font-size: 16px; }
+  .charla-card p { font-size: 13px; opacity: .8; margin: 0; }
+
+  .prensa-section { background: var(--color-paper-soft); }
+  .prensa-logos { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; justify-content: center; opacity: .6; font-family: var(--font-data); font-size: 13px; margin-top: var(--space-3); }
+  .prensa-logos span { padding: 10px 16px; border: 1px dashed rgba(1,44,61,.3); border-radius: var(--radius-sm); }
+
+  .cta-final { background: var(--color-navy); color: #fff; text-align: center; }
+  .cta-final h2 { color: #fff; font-size: 28px; }
+  .cta-final .ctas { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin-top: var(--space-2); }
+
+  @media (max-width: 900px) {
+    .stella-hero-inner { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .charlas-grid { grid-template-columns: 1fr; }
+    .stella-hero h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="personal-bar">Marca personal de Stella Torres — dentro de ST Relaciones Públicas</div>
+
+<div class="container breadcrumb"><a href="maqueta-st-rrpp.html">Inicio</a> / Stella Torres</div>
+
+<section class="stella-hero">
+  <div class="container stella-hero-inner">
+    <div class="stella-hero-photo">[ foto Stella Torres ]</div>
+    <div>
+      <div class="stella-hero-eyebrow">Consultora · Speaker</div>
+      <h1>Stella Torres</h1>
+      <p class="lead">Comunicación estratégica y Relaciones Públicas para marcas, organizaciones y equipos de liderazgo en Argentina y LatAm.</p>
+      <div class="stella-hero-ctas">
+        <a href="#contratar" class="btn btn-coral">Contratar para tu evento</a>
+        <a href="maqueta-st-rrpp.html" class="btn btn-outline-light">Ver cursos que dicta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bio-section">
+  <div class="container">
+    <div class="section-eyebrow">Sobre mí</div>
+    <h2>Trayectoria</h2>
+    <p>Soy consultora en Relaciones Públicas y comunicación estratégica, con <span class="highlight">más de 15 años acompañando marcas y organizaciones</span> en el diseño de sus estrategias de comunicación.</p>
+    <p>Dirijo <span class="highlight">ST Relaciones Públicas</span>, mi marca de formación, donde llevo ese mismo estándar profesional a comunicadores de toda LatAm a través de cursos y capacitaciones in company.</p>
+    <p>Como speaker, doy charlas y talleres sobre comunicación estratégica, gestión de prensa y comunicación de crisis para empresas y organizaciones.</p>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-item"><div class="num">15+</div><div class="label">Años de trayectoria</div></div>
+    <div class="stat-item"><div class="num">80+</div><div class="label">Empresas asesoradas</div></div>
+    <div class="stat-item"><div class="num">1200+</div><div class="label">Alumnos formados</div></div>
+    <div class="stat-item"><div class="num">30+</div><div class="label">Charlas dictadas</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Speaking</div>
+    <h2>Temas de charlas y talleres</h2>
+    <div class="charlas-grid">
+      <div class="charla-card">
+        <h3>Comunicación estratégica para líderes</h3>
+        <p>Cómo comunicar decisiones con claridad e impacto.</p>
+      </div>
+      <div class="charla-card">
+        <h3>Gestión de prensa en la era digital</h3>
+        <p>RRPP tradicionales combinadas con estrategias digitales.</p>
+      </div>
+      <div class="charla-card">
+        <h3>Comunicación de crisis</h3>
+        <p>Cómo prepararse antes de que la crisis llegue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prensa-section">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">Prensa</div>
+    <h2 style="text-align:center;">Medios donde participé</h2>
+    <div class="prensa-logos">
+      <span>[ Medio 1 ]</span>
+      <span>[ Medio 2 ]</span>
+      <span>[ Medio 3 ]</span>
+      <span>[ Medio 4 ]</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contratar">
+  <div class="container">
+    <h2>¿Buscás una speaker para tu próximo evento?</h2>
+    <div class="ctas">
+      <a href="maqueta-contacto.html" class="btn btn-coral">Contactar a Stella</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
