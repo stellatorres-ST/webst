@@ -73,3 +73,4 @@ add_action( 'wp_enqueue_scripts', 'strrpp_assets' );
 /** Includes */
 require STRRPP_DIR . '/inc/currency-switcher.php';
 require STRRPP_DIR . '/inc/template-tags.php';
+require STRRPP_DIR . '/inc/course-meta.php';

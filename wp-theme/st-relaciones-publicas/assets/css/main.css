@@ -385,3 +385,76 @@ section { padding: var(--space-6) 0; }
   .logo-text small { display: none; }
   .currency-switcher button { padding: 6px 10px; }
 }
+
+/* ==========================================================================
+   Ficha de curso individual
+   Fuente de verdad: /maqueta-ficha-curso.html
+   ========================================================================== */
+.breadcrumb { font-family: var(--font-data); font-size: 13px; opacity: .6; padding: var(--space-2) var(--space-3); max-width: var(--container); margin: 0 auto; }
+.breadcrumb a:hover { color: var(--color-coral); }
+
+.curso-hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-5) 0; }
+.curso-hero-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--space-5); align-items: start; }
+.curso-hero-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .12em; color: var(--color-teal); font-size: 13px; font-weight: 700; margin-bottom: var(--space-2); }
+.curso-hero h1 { font-size: 38px; color: #fff; }
+.curso-hero .lead { font-size: 17px; opacity: .85; max-width: 520px; }
+.curso-hero-meta { display: flex; gap: var(--space-3); margin: var(--space-2) 0 var(--space-3); font-size: 14px; opacity: .8; }
+.buy-card { background: #fff; color: var(--color-navy); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: var(--shadow-lg); }
+.buy-card .price-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-2); }
+.buy-card .price { font-family: var(--font-data); font-weight: 700; font-size: 32px; }
+.buy-card .btn { margin-bottom: 10px; }
+.buy-card .fine-print { font-size: 12px; opacity: .6; text-align: center; margin: 0; }
+.btn-block { width: 100%; }
+
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px var(--space-4); }
+
+.perfiles-section { background: var(--color-paper-soft); }
+.perfiles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.perfil-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-3); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-teal); }
+.perfil-card h3 { font-size: 17px; }
+.perfil-card p { font-size: 14px; opacity: .8; margin: 0; }
+
+.programa-list { display: flex; flex-direction: column; gap: 10px; max-width: 760px; margin: 0 auto; }
+.modulo { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden; }
+.modulo summary { list-style: none; cursor: pointer; padding: var(--space-2) var(--space-3); display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); font-family: var(--font-heading); font-weight: 700; }
+.modulo summary::-webkit-details-marker { display: none; }
+.modulo summary .mod-num { color: var(--color-coral); font-weight: 700; margin-right: 10px; }
+.modulo summary .mod-meta { margin-left: auto; font-weight: 400; font-size: 13px; opacity: .6; }
+.modulo summary .caret { transition: transform .2s ease; opacity: .5; }
+.modulo[open] summary .caret { transform: rotate(180deg); }
+.modulo-body { padding: 0 var(--space-3) var(--space-3); }
+.modulo-body ul { margin: 0; padding-left: 20px; font-size: 14px; opacity: .85; }
+.modulo-body li { padding: 4px 0; }
+
+.docente-inner { display: grid; grid-template-columns: .5fr 1fr; gap: var(--space-4); align-items: center; background: #fff; border-radius: var(--radius-lg); padding: var(--space-4); box-shadow: var(--shadow-sm); border: 1px solid var(--color-teal); }
+.docente-photo { aspect-ratio: 1/1; border-radius: var(--radius-md); background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; color: var(--color-navy); font-family: var(--font-data); overflow: hidden; }
+.docente-photo img { width: 100%; height: 100%; object-fit: cover; }
+.docente-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 700; color: var(--color-teal); }
+
+.beneficios-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+.beneficio-item { text-align: center; padding: var(--space-2); }
+.beneficio-item .icon { width: 48px; height: 48px; border-radius: 50%; background: var(--color-teal-soft); color: var(--color-navy); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 20px; }
+.beneficio-item h4 { font-size: 14px; margin-bottom: 4px; }
+.beneficio-item p { font-size: 13px; opacity: .7; margin: 0; }
+
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.faq-item { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.faq-item summary { list-style: none; cursor: pointer; padding: var(--space-2) var(--space-3); font-family: var(--font-heading); font-weight: 700; font-size: 15px; display: flex; justify-content: space-between; gap: var(--space-2); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .caret { transition: transform .2s ease; opacity: .5; }
+.faq-item[open] summary .caret { transform: rotate(180deg); }
+.faq-item p { padding: 0 var(--space-3) var(--space-2); font-size: 14px; opacity: .85; margin: 0; }
+
+.cta-final { background: var(--color-navy); color: #fff; text-align: center; }
+.cta-final h2 { color: #fff; font-size: 30px; }
+.cta-final p { opacity: .8; max-width: 480px; margin: 0 auto var(--space-3); }
+
+.crosssell-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+
+@media (max-width: 900px) {
+  .curso-hero-inner, .docente-inner { grid-template-columns: 1fr; }
+  .check-grid { grid-template-columns: 1fr; }
+  .perfiles-grid, .crosssell-grid { grid-template-columns: 1fr; }
+  .beneficios-grid { grid-template-columns: 1fr 1fr; }
+  .curso-hero h1 { font-size: 28px; }
+}
