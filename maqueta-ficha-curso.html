@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relaciones Públicas 360° — Ficha de curso (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-paper: #F7F8F3;
+    --color-navy: #012C3D;
+    --color-teal: #78BDC4;
+    --color-coral: #F8444F;
+    --color-navy-soft: #0a3a4d;
+    --color-paper-soft: #eceee4;
+    --color-teal-soft: #e4f2f3;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-data: 'Roboto Condensed', sans-serif;
+    --fw-bold: 700;
+    --fw-medium: 500;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 40px;
+    --space-5: 64px;
+    --space-6: 96px;
+    --shadow-sm: 0 2px 8px rgba(1,44,61,0.08);
+    --shadow-md: 0 8px 24px rgba(1,44,61,0.12);
+    --shadow-lg: 0 16px 48px rgba(1,44,61,0.18);
+    --container: 1180px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    color: var(--color-navy);
+    background: var(--color-paper);
+    line-height: 1.5;
+    padding-bottom: 72px;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-bold); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { margin: 0 0 var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .data { font-family: var(--font-data); }
+  section { padding: var(--space-5) 0; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-pill); font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: 15px; border: 2px solid transparent; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-coral { background: var(--color-coral); color: #fff; box-shadow: var(--shadow-sm); }
+  .btn-coral:hover { box-shadow: var(--shadow-md); }
+  .btn-outline-navy { background: transparent; border-color: var(--color-navy); color: var(--color-navy); }
+  .btn-outline-light { background: transparent; border-color: rgba(247,248,243,.5); color: var(--color-paper); }
+  .btn-outline-light:hover { border-color: var(--color-paper); }
+  .btn-sm { padding: 10px 20px; font-size: 13px; }
+  .btn-block { width: 100%; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: var(--radius-pill); font-family: var(--font-data); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .badge-teal { background: var(--color-teal-soft); color: var(--color-navy); border: 1px solid var(--color-teal); }
+
+  .breadcrumb { font-family: var(--font-data); font-size: 13px; opacity: .6; padding: var(--space-2) 0; }
+  .breadcrumb a:hover { color: var(--color-coral); }
+
+  /* ===== 1. Hero ===== */
+  .curso-hero { background: var(--color-navy); color: var(--color-paper); padding: var(--space-5) 0; }
+  .curso-hero-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--space-5); align-items: start; }
+  .curso-hero-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .12em; color: var(--color-teal); font-size: 13px; font-weight: 700; margin-bottom: var(--space-2); }
+  .curso-hero h1 { font-size: 38px; color: #fff; }
+  .curso-hero .lead { font-size: 17px; opacity: .85; max-width: 520px; }
+  .curso-hero-meta { display: flex; gap: var(--space-3); margin: var(--space-2) 0 var(--space-3); font-family: var(--font-data); font-size: 14px; opacity: .8; }
+  .buy-card { background: #fff; color: var(--color-navy); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: var(--shadow-lg); }
+  .buy-card .price-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-2); }
+  .buy-card .price { font-family: var(--font-data); font-weight: 700; font-size: 32px; }
+  .buy-card .price small { font-size: 13px; font-weight: 400; opacity: .6; }
+  .buy-card .btn { margin-bottom: 10px; }
+  .buy-card .fine-print { font-size: 12px; opacity: .6; text-align: center; }
+
+  /* ===== 2. Checklist qué vas a aprender ===== */
+  .checklist-section { background: var(--color-paper); }
+  .section-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .1em; font-size: 13px; font-weight: 700; color: var(--color-coral); margin-bottom: 8px; }
+  .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px var(--space-4); }
+  .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; }
+  .check-item .tick { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--color-coral); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+
+  /* ===== 3. Para quién es ===== */
+  .perfiles-section { background: var(--color-paper-soft); }
+  .perfiles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .perfil-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-3); box-shadow: var(--shadow-sm); border-top: 4px solid var(--color-teal); }
+  .perfil-card h3 { font-size: 17px; }
+  .perfil-card p { font-size: 14px; opacity: .8; margin: 0; }
+
+  /* ===== 4. Programa (acordeón nativo) ===== */
+  .programa-section { background: var(--color-paper); }
+  .programa-list { display: flex; flex-direction: column; gap: 10px; max-width: 760px; margin: 0 auto; }
+  .modulo { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .modulo summary { list-style: none; cursor: pointer; padding: var(--space-2) var(--space-3); display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); font-family: var(--font-heading); font-weight: 700; }
+  .modulo summary::-webkit-details-marker { display: none; }
+  .modulo summary .mod-num { color: var(--color-coral); font-family: var(--font-data); font-weight: 700; margin-right: 10px; }
+  .modulo summary .mod-meta { margin-left: auto; font-family: var(--font-data); font-weight: 400; font-size: 13px; opacity: .6; }
+  .modulo summary .caret { transition: transform .2s ease; opacity: .5; }
+  .modulo[open] summary .caret { transform: rotate(180deg); }
+  .modulo-body { padding: 0 var(--space-3) var(--space-3); }
+  .modulo-body ul { margin: 0; padding-left: 20px; font-size: 14px; opacity: .85; }
+  .modulo-body li { padding: 4px 0; }
+
+  /* ===== 5. Docente ===== */
+  .docente-section { background: var(--color-paper-soft); }
+  .docente-inner { display: grid; grid-template-columns: .5fr 1fr; gap: var(--space-4); align-items: center; background: #fff; border-radius: var(--radius-lg); padding: var(--space-4); box-shadow: var(--shadow-sm); border: 1px solid var(--color-teal); }
+  .docente-photo { aspect-ratio: 1/1; border-radius: var(--radius-md); background: var(--color-teal-soft); display: flex; align-items: center; justify-content: center; color: var(--color-navy); font-family: var(--font-data); }
+  .docente-eyebrow { font-family: var(--font-data); text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 700; color: var(--color-teal); }
+
+  /* ===== 6. Beneficios ===== */
+  .beneficios-section { background: var(--color-paper); }
+  .beneficios-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+  .beneficio-item { text-align: center; padding: var(--space-2); }
+  .beneficio-item .icon { width: 48px; height: 48px; border-radius: 50%; background: var(--color-teal-soft); color: var(--color-navy); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 20px; }
+  .beneficio-item h4 { font-size: 14px; margin-bottom: 4px; }
+  .beneficio-item p { font-size: 13px; opacity: .7; margin: 0; }
+
+  /* ===== 7. FAQ ===== */
+  .faq-section { background: var(--color-paper-soft); }
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+  .faq-item summary { list-style: none; cursor: pointer; padding: var(--space-2) var(--space-3); font-family: var(--font-heading); font-weight: 700; font-size: 15px; display: flex; justify-content: space-between; gap: var(--space-2); }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .caret { transition: transform .2s ease; opacity: .5; }
+  .faq-item[open] summary .caret { transform: rotate(180deg); }
+  .faq-item p { padding: 0 var(--space-3) var(--space-2); font-size: 14px; opacity: .85; margin: 0; }
+
+  /* ===== 8. CTA final ===== */
+  .cta-final { background: var(--color-navy); color: #fff; text-align: center; }
+  .cta-final h2 { color: #fff; font-size: 30px; }
+  .cta-final p { opacity: .8; max-width: 480px; margin: 0 auto var(--space-3); }
+
+  /* ===== 9. Cross-sell ===== */
+  .crosssell-section { background: var(--color-paper); }
+  .crosssell-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .curso-card { background: #fff; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+  .curso-thumb { aspect-ratio: 16/10; background: linear-gradient(135deg, var(--color-navy), var(--color-navy-soft)); position: relative; }
+  .curso-thumb .badge { position: absolute; top: 12px; left: 12px; }
+  .curso-body { padding: var(--space-3); display: flex; flex-direction: column; gap: 8px; }
+  .curso-body h3 { font-size: 16px; }
+  .curso-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+  .curso-price { font-family: var(--font-data); font-weight: 700; font-size: 17px; }
+
+  /* ===== Barra fija mobile ===== */
+  .mobile-buybar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; box-shadow: 0 -4px 16px rgba(1,44,61,.12); padding: 12px var(--space-2); align-items: center; justify-content: space-between; z-index: 200; }
+  .mobile-buybar .price { font-family: var(--font-data); font-weight: 700; font-size: 18px; }
+  .mobile-buybar .price small { font-weight: 400; font-size: 12px; opacity: .6; }
+
+  @media (max-width: 900px) {
+    .curso-hero-inner, .docente-inner { grid-template-columns: 1fr; }
+    .check-grid { grid-template-columns: 1fr; }
+    .perfiles-grid, .beneficios-grid, .crosssell-grid { grid-template-columns: 1fr; }
+    .beneficios-grid { grid-template-columns: 1fr 1fr; }
+    .mobile-buybar { display: flex; }
+    .curso-hero h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container breadcrumb">
+  <a href="maqueta-st-rrpp.html">Inicio</a> / <a href="#">Cursos</a> / Relaciones Públicas 360°
+</div>
+
+<!-- 1. HERO -->
+<section class="curso-hero">
+  <div class="container curso-hero-inner">
+    <div>
+      <div class="curso-hero-eyebrow">Curso online · Certificado</div>
+      <h1>Relaciones Públicas 360°: de la estrategia a la gestión de prensa real</h1>
+      <p class="lead">Terminá el curso con un plan de comunicación propio, listo para presentar, y las herramientas para ejecutarlo desde el día uno.</p>
+      <div class="curso-hero-meta">
+        <span>📦 8 módulos</span>
+        <span>⏱ 20 hs</span>
+        <span>🎓 Certificado incluido</span>
+      </div>
+      <a href="#programa" class="btn btn-outline-light">Ver programa completo</a>
+    </div>
+
+    <div class="buy-card">
+      <div class="price-row">
+        <div class="price">$45.000 <small>ARS</small></div>
+        <span class="badge badge-teal">3 cuotas sin interés</span>
+      </div>
+      <a href="#" class="btn btn-coral btn-block">Comprar curso</a>
+      <a href="#programa" class="btn btn-outline-navy btn-block">Ver programa</a>
+      <p class="fine-print">Acceso inmediato · Pago único o en cuotas · Garantía 7 días</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. QUÉ VAS A APRENDER -->
+<section class="checklist-section">
+  <div class="container">
+    <div class="section-eyebrow">Qué vas a aprender</div>
+    <h2>Al terminar este curso vas a poder</h2>
+    <div class="check-grid">
+      <div class="check-item"><span class="tick">✓</span> Diseñar un plan de comunicación estratégico de punta a punta</div>
+      <div class="check-item"><span class="tick">✓</span> Redactar gacetillas y comunicados que efectivamente se publiquen</div>
+      <div class="check-item"><span class="tick">✓</span> Armar y mantener una base de contactos de prensa propia</div>
+      <div class="check-item"><span class="tick">✓</span> Medir el impacto de una campaña con indicadores concretos</div>
+      <div class="check-item"><span class="tick">✓</span> Gestionar una crisis de comunicación paso a paso</div>
+      <div class="check-item"><span class="tick">✓</span> Presentar resultados de RRPP a dirección con datos, no intuición</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PARA QUIÉN ES -->
+<section class="perfiles-section">
+  <div class="container">
+    <div class="section-eyebrow">¿Para quién es este curso?</div>
+    <h2>Elegí el perfil que más se parece al tuyo</h2>
+    <div class="perfiles-grid">
+      <div class="perfil-card">
+        <h3>Estás empezando en RRPP</h3>
+        <p>Tenés formación en comunicación o marketing pero te falta la práctica concreta de relaciones públicas y prensa.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Ya trabajás en el área</h3>
+        <p>Manejás la comunicación de una marca o empresa y necesitás sistematizar lo que hacés de forma intuitiva.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Sos independiente o freelance</h3>
+        <p>Ofrecés servicios de comunicación a clientes y querés un marco profesional para vender mejor tu trabajo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROGRAMA -->
+<section class="programa-section" id="programa">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">Programa</div>
+    <h2 style="text-align:center;">Temario del curso</h2>
+    <div class="programa-list">
+      <details class="modulo" open>
+        <summary><span><span class="mod-num data">01</span>Fundamentos de las Relaciones Públicas</span> <span class="mod-meta">3 clases · 2 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Qué son las RRPP y en qué se diferencian del marketing</li>
+            <li>Públicos y stakeholders</li>
+            <li>Construcción de reputación e identidad</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">02</span>Planificación estratégica</span> <span class="mod-meta">4 clases · 3 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Diagnóstico y objetivos</li>
+            <li>Definición de mensajes clave</li>
+            <li>Plan de comunicación 360°</li>
+            <li>Cronograma y presupuesto</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">03</span>Gestión de prensa</span> <span class="mod-meta">4 clases · 3 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Redacción de gacetillas</li>
+            <li>Base de datos de medios y periodistas</li>
+            <li>Seguimiento y relación con prensa</li>
+            <li>Conferencias de prensa</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">04</span>Comunicación digital y redes</span> <span class="mod-meta">3 clases · 2,5 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>RRPP digitales vs. tradicionales</li>
+            <li>Influencers y voceros</li>
+            <li>Contenido para redes institucionales</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">05</span>Comunicación de crisis</span> <span class="mod-meta">3 clases · 2,5 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Detección temprana de riesgos</li>
+            <li>Protocolo de respuesta</li>
+            <li>Casos reales y simulacro</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">06</span>Eventos y activaciones</span> <span class="mod-meta">2 clases · 2 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Planificación de eventos de prensa</li>
+            <li>Lanzamientos de producto</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">07</span>Medición e indicadores</span> <span class="mod-meta">2 clases · 2 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Clipping y análisis de cobertura</li>
+            <li>KPIs de RRPP</li>
+            <li>Reportes para dirección</li>
+          </ul>
+        </div>
+      </details>
+      <details class="modulo">
+        <summary><span><span class="mod-num data">08</span>Proyecto final</span> <span class="mod-meta">3 clases · 3 hs</span> <span class="caret">▾</span></summary>
+        <div class="modulo-body">
+          <ul>
+            <li>Armado de tu plan de comunicación propio</li>
+            <li>Devolución individual</li>
+            <li>Entrega de certificado</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 5. DOCENTE -->
+<section class="docente-section">
+  <div class="container">
+    <div class="docente-inner">
+      <div class="docente-photo">[ foto Stella Torres ]</div>
+      <div>
+        <div class="docente-eyebrow">Tu docente</div>
+        <h2>Stella Torres</h2>
+        <p>Consultora en Relaciones Públicas y speaker especializada en comunicación estratégica, con trayectoria acompañando marcas y organizaciones en Argentina y LatAm.</p>
+        <a href="#" class="btn btn-outline-navy btn-sm">Conocer más sobre Stella</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. BENEFICIOS -->
+<section class="beneficios-section">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">Qué incluye</div>
+    <h2 style="text-align:center;">Beneficios del curso</h2>
+    <div class="beneficios-grid">
+      <div class="beneficio-item">
+        <div class="icon">🎓</div>
+        <h4>Certificado</h4>
+        <p>Emitido al completar el 100% y aprobar la evaluación final</p>
+      </div>
+      <div class="beneficio-item">
+        <div class="icon">♾️</div>
+        <h4>Acceso ilimitado</h4>
+        <p>Mirá las clases las veces que quieras, sin vencimiento</p>
+      </div>
+      <div class="beneficio-item">
+        <div class="icon">📄</div>
+        <h4>Material descargable</h4>
+        <p>Plantillas y guías listas para usar en tu trabajo</p>
+      </div>
+      <div class="beneficio-item">
+        <div class="icon">💬</div>
+        <h4>Soporte de consultas</h4>
+        <p>Acompañamiento durante todo el curso</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">Preguntas frecuentes</div>
+    <h2 style="text-align:center;">FAQ</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>¿Necesito experiencia previa en RRPP? <span class="caret">▾</span></summary>
+        <p>No, el curso está pensado para arrancar desde una base de comunicación o marketing y avanzar hasta un nivel profesional aplicado.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto tiempo tengo para hacerlo? <span class="caret">▾</span></summary>
+        <p>El acceso es ilimitado, no vence. Podés avanzar a tu ritmo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿El certificado tiene validez profesional? <span class="caret">▾</span></summary>
+        <p>Es un certificado emitido por ST Relaciones Públicas al completar el curso y aprobar la evaluación final.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo pagar en cuotas? <span class="caret">▾</span></summary>
+        <p>Sí, ofrecemos 3 cuotas sin interés con tarjeta de crédito. También podés pagar en USD si sos de otro país.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Hay devolución si no me sirve? <span class="caret">▾</span></summary>
+        <p>Sí, tenés garantía de devolución dentro de los primeros 7 días de la compra.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CTA final -->
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Lista o listo para empezar?</h2>
+    <p>Sumate a Relaciones Públicas 360° y salí con un plan de comunicación propio.</p>
+    <a href="#" class="btn btn-coral">Comprar curso — $45.000 ARS</a>
+  </div>
+</section>
+
+<!-- 9. Cross-sell -->
+<section class="crosssell-section">
+  <div class="container">
+    <div class="section-eyebrow">También te puede interesar</div>
+    <h2>Cursos relacionados</h2>
+    <div class="crosssell-grid">
+      <article class="curso-card">
+        <div class="curso-thumb"><span class="badge badge-teal">Certificado</span></div>
+        <div class="curso-body">
+          <h3>Marketing Estratégico para RRPP</h3>
+          <div class="curso-footer">
+            <div class="curso-price">$38.000 <small>ARS</small></div>
+            <a href="#" class="btn btn-coral btn-sm">Ver curso</a>
+          </div>
+        </div>
+      </article>
+      <article class="curso-card">
+        <div class="curso-thumb"><span class="badge badge-teal">Certificado</span></div>
+        <div class="curso-body">
+          <h3>Comunicación de Crisis Avanzada</h3>
+          <div class="curso-footer">
+            <div class="curso-price">$32.000 <small>ARS</small></div>
+            <a href="#" class="btn btn-coral btn-sm">Ver curso</a>
+          </div>
+        </div>
+      </article>
+      <article class="curso-card">
+        <div class="curso-thumb"><span class="badge badge-teal">Certificado</span></div>
+        <div class="curso-body">
+          <h3>Redacción para Prensa</h3>
+          <div class="curso-footer">
+            <div class="curso-price">$28.000 <small>ARS</small></div>
+            <a href="#" class="btn btn-coral btn-sm">Ver curso</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-buybar">
+  <div class="price">$45.000 <small>ARS</small></div>
+  <a href="#" class="btn btn-coral btn-sm">Comprar curso</a>
+</div>
+
+</body>
+</html>
