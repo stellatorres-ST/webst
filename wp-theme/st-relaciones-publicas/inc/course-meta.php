@@ -36,6 +36,22 @@ function strrpp_course_hero_meta( $product_id ) {
 	return array_map( 'trim', explode( '|', $raw ) );
 }
 
+/**
+ * Mismo dato que strrpp_course_hero_meta() con un ícono adelante, para
+ * mostrar en las cards de catálogo antes del precio (patrón Luzzi Digital:
+ * duración/módulos/certificado visibles antes de mostrar el precio).
+ */
+function strrpp_course_card_meta( $product_id ) {
+	$icons = array( '🧩', '⏱', '🎓' );
+	$meta  = strrpp_course_hero_meta( $product_id );
+	$out   = array();
+	foreach ( $meta as $i => $dato ) {
+		$icon  = isset( $icons[ $i ] ) ? $icons[ $i ] : '';
+		$out[] = trim( $icon . ' ' . $dato );
+	}
+	return $out;
+}
+
 function strrpp_course_checklist( $product_id ) {
 	$default = "Diseñar un plan de comunicación estratégico de punta a punta\nRedactar gacetillas y comunicados que efectivamente se publiquen\nArmar y mantener una base de contactos de prensa propia\nMedir el impacto de una campaña con indicadores concretos";
 	$raw     = strrpp_course_meta( $product_id, '_st_checklist', $default );

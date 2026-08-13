@@ -309,10 +309,15 @@ section { padding: var(--space-6) 0; }
 .curso-thumb .badge { position: absolute; top: 12px; left: 12px; }
 .curso-body { padding: var(--space-3); display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .curso-body h3 { font-size: 17px; }
-.curso-meta { display: flex; gap: 12px; font-family: var(--font-data); font-size: 13px; opacity: .7; }
-.curso-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; }
-.curso-price { font-family: var(--font-data); font-weight: 700; font-size: 18px; }
+.curso-meta { display: flex; gap: 12px; font-family: var(--font-data); font-size: 13px; opacity: .7; flex-wrap: wrap; }
+.curso-footer { display: flex; flex-direction: column; gap: 10px; margin-top: auto; padding-top: 8px; }
+.curso-price { font-family: var(--font-data); font-weight: 700; font-size: 20px; }
 .curso-price small { font-weight: 400; font-size: 12px; opacity: .6; }
+.curso-cta-row { display: flex; align-items: center; gap: 12px; }
+.curso-cta-row .btn-coral { flex: 1; }
+.btn-detalles { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--color-navy); white-space: nowrap; }
+.btn-detalles .plus-icon { width: 20px; height: 20px; border-radius: 50%; border: 2px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: 12px; flex: none; }
+.btn-detalles:hover { color: var(--color-coral); }
 
 /* ============ In Company ============ */
 .incompany { background: var(--color-navy); color: var(--color-paper); }

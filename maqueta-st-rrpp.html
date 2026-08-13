@@ -370,10 +370,15 @@
   .curso-thumb .badge { position: absolute; top: 12px; left: 12px; }
   .curso-body { padding: var(--space-3); display: flex; flex-direction: column; gap: 8px; flex: 1; }
   .curso-body h3 { font-size: 17px; }
-  .curso-meta { display: flex; gap: 12px; font-family: var(--font-data); font-size: 13px; opacity: .7; }
-  .curso-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; }
-  .curso-price { font-family: var(--font-data); font-weight: 700; font-size: 18px; }
+  .curso-meta { display: flex; gap: 12px; font-family: var(--font-data); font-size: 13px; opacity: .7; flex-wrap: wrap; }
+  .curso-footer { display: flex; flex-direction: column; gap: 10px; margin-top: auto; padding-top: 8px; }
+  .curso-price { font-family: var(--font-data); font-weight: 700; font-size: 20px; }
   .curso-price small { font-weight: 400; font-size: 12px; opacity: .6; }
+  .curso-cta-row { display: flex; align-items: center; gap: 12px; }
+  .curso-cta-row .btn-coral { flex: 1; }
+  .btn-detalles { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--color-navy); white-space: nowrap; }
+  .btn-detalles .plus-icon { width: 20px; height: 20px; border-radius: 50%; border: 2px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: 12px; flex: none; }
+  .btn-detalles:hover { color: var(--color-coral); }
 
   /* ============ In Company ============ */
   .incompany { background: var(--color-navy); color: var(--color-paper); }
@@ -587,10 +592,13 @@
         <div class="curso-thumb"><span class="badge badge-teal" style="position:absolute;top:12px;left:12px;">Certificado</span></div>
         <div class="curso-body">
           <h3>Relaciones Públicas 360°</h3>
-          <div class="curso-meta"><span>8 módulos</span><span>20 hs</span></div>
+          <div class="curso-meta data"><span>⏱ 20 hs</span><span>🧩 8 módulos</span><span>🎓 Certificado</span></div>
           <div class="curso-footer">
             <div class="curso-price">$45.000<small> ARS</small></div>
-            <a href="#" class="btn btn-coral btn-sm">Comprar</a>
+            <div class="curso-cta-row">
+              <a href="#" class="btn btn-coral btn-sm">Comprar curso</a>
+              <a href="maqueta-ficha-curso.html" class="btn-detalles"><span class="plus-icon">+</span> Detalles</a>
+            </div>
           </div>
         </div>
       </article>
@@ -598,10 +606,13 @@
         <div class="curso-thumb"><span class="badge badge-free" style="position:absolute;top:12px;left:12px;">Gratis</span></div>
         <div class="curso-body">
           <h3>Introducción a la Comunicación Estratégica</h3>
-          <div class="curso-meta"><span>3 módulos</span><span>4 hs</span></div>
+          <div class="curso-meta data"><span>⏱ 4 hs</span><span>🧩 3 módulos</span><span>🎓 Certificado</span></div>
           <div class="curso-footer">
             <div class="curso-price">Gratis</div>
-            <a href="#" class="btn btn-outline-navy btn-sm">Empezar</a>
+            <div class="curso-cta-row">
+              <a href="#" class="btn btn-outline-navy btn-sm">Empezar</a>
+              <a href="#" class="btn-detalles"><span class="plus-icon">+</span> Detalles</a>
+            </div>
           </div>
         </div>
       </article>
@@ -609,10 +620,13 @@
         <div class="curso-thumb"><span class="badge badge-coral" style="position:absolute;top:12px;left:12px;">Nuevo</span></div>
         <div class="curso-body">
           <h3>Marketing Estratégico para RRPP</h3>
-          <div class="curso-meta"><span>6 módulos</span><span>14 hs</span></div>
+          <div class="curso-meta data"><span>⏱ 14 hs</span><span>🧩 6 módulos</span><span>🎓 Certificado</span></div>
           <div class="curso-footer">
             <div class="curso-price">$38.000<small> ARS</small></div>
-            <a href="#" class="btn btn-coral btn-sm">Comprar</a>
+            <div class="curso-cta-row">
+              <a href="#" class="btn btn-coral btn-sm">Comprar curso</a>
+              <a href="#" class="btn-detalles"><span class="plus-icon">+</span> Detalles</a>
+            </div>
           </div>
         </div>
       </article>

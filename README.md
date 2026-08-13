@@ -68,12 +68,18 @@ WooCommerce + LearnDash.
 
 ## Banco de referencias (Luzzi Digital / Vilma Núñez)
 
-Decisiones ya incorporadas al sitio: checklist con tildes coral, barra de
+Decisiones incorporadas al sitio: checklist con tildes coral, barra de
 compra sticky en mobile, header minimalista con un solo CTA principal,
-badge "GRATIS" fijo junto al menú (agregado en el header, linkea a
-Recursos gratuitos). Pendientes para cuando se construyan esas páginas:
-franja de testimonios/prensa con fondo sólido en "Sobre ST", y uso de
-highlighter de color en los textos largos de autoridad de esa sección.
+badge "GRATIS" fijo junto al menú (linkea a Recursos gratuitos), franja de
+testimonios/prensa con fondo sólido en "Sobre ST", highlighter de color en
+textos de autoridad.
+
+A partir de capturas reales de luzzidigital.com se ajustaron las cards de
+curso (homepage, cross-sell) para que coincidan con el patrón de Luzzi:
+fila de íconos de duración/módulos/certificado **antes del precio**, y
+**CTA doble** — "Comprar curso" (botón primario) + "Detalles" (link
+secundario con ícono +) en vez de un solo botón. Función helper:
+`strrpp_course_card_meta()` en `inc/course-meta.php`.
 
 ## Páginas institucionales
 

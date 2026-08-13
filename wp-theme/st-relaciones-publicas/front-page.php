@@ -87,9 +87,20 @@ get_header();
 						</a>
 						<div class="curso-body">
 							<h3><a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></h3>
+							<?php $card_meta = strrpp_course_card_meta( $product->get_id() ); ?>
+							<?php if ( ! empty( $card_meta ) ) : ?>
+								<div class="curso-meta data">
+									<?php foreach ( $card_meta as $dato ) : ?>
+										<span><?php echo esc_html( $dato ); ?></span>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
 							<div class="curso-footer">
 								<div class="curso-price data"><?php echo wp_kses_post( $product->get_price_html() ); ?></div>
-								<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="btn btn-coral btn-sm"><?php esc_html_e( 'Comprar', 'st-rrpp' ); ?></a>
+								<div class="curso-cta-row">
+									<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="btn btn-coral btn-sm"><?php esc_html_e( 'Comprar curso', 'st-rrpp' ); ?></a>
+									<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="btn-detalles"><span class="plus-icon">+</span> <?php esc_html_e( 'Detalles', 'st-rrpp' ); ?></a>
+								</div>
 							</div>
 						</div>
 					</article>
@@ -98,9 +109,9 @@ get_header();
 			else :
 				// Placeholder mientras se cargan cursos reales en WooCommerce/LearnDash.
 				$placeholders = array(
-					array( 'title' => __( 'Relaciones Públicas 360°', 'st-rrpp' ), 'badge' => array( __( 'Certificado', 'st-rrpp' ), 'badge-teal' ), 'price' => '$45.000', 'cta' => __( 'Comprar', 'st-rrpp' ) ),
-					array( 'title' => __( 'Introducción a la Comunicación Estratégica', 'st-rrpp' ), 'badge' => array( __( 'Gratis', 'st-rrpp' ), 'badge-free' ), 'price' => __( 'Gratis', 'st-rrpp' ), 'cta' => __( 'Empezar', 'st-rrpp' ) ),
-					array( 'title' => __( 'Marketing Estratégico para RRPP', 'st-rrpp' ), 'badge' => array( __( 'Nuevo', 'st-rrpp' ), 'badge-coral' ), 'price' => '$38.000', 'cta' => __( 'Comprar', 'st-rrpp' ) ),
+					array( 'title' => __( 'Relaciones Públicas 360°', 'st-rrpp' ), 'badge' => array( __( 'Certificado', 'st-rrpp' ), 'badge-teal' ), 'meta' => array( '🧩 8 módulos', '⏱ 20 hs', '🎓 Certificado' ), 'price' => '$45.000', 'cta' => __( 'Comprar curso', 'st-rrpp' ) ),
+					array( 'title' => __( 'Introducción a la Comunicación Estratégica', 'st-rrpp' ), 'badge' => array( __( 'Gratis', 'st-rrpp' ), 'badge-free' ), 'meta' => array( '🧩 3 módulos', '⏱ 4 hs', '🎓 Certificado' ), 'price' => __( 'Gratis', 'st-rrpp' ), 'cta' => __( 'Empezar', 'st-rrpp' ) ),
+					array( 'title' => __( 'Marketing Estratégico para RRPP', 'st-rrpp' ), 'badge' => array( __( 'Nuevo', 'st-rrpp' ), 'badge-coral' ), 'meta' => array( '🧩 6 módulos', '⏱ 14 hs', '🎓 Certificado' ), 'price' => '$38.000', 'cta' => __( 'Comprar curso', 'st-rrpp' ) ),
 				);
 				foreach ( $placeholders as $curso ) :
 					?>
@@ -110,9 +121,17 @@ get_header();
 						</div>
 						<div class="curso-body">
 							<h3><?php echo esc_html( $curso['title'] ); ?></h3>
+							<div class="curso-meta data">
+								<?php foreach ( $curso['meta'] as $dato ) : ?>
+									<span><?php echo esc_html( $dato ); ?></span>
+								<?php endforeach; ?>
+							</div>
 							<div class="curso-footer">
 								<div class="curso-price data"><?php echo esc_html( $curso['price'] ); ?><?php if ( '$' === substr( $curso['price'], 0, 1 ) ) : ?><small> ARS</small><?php endif; ?></div>
-								<a href="#" class="btn btn-coral btn-sm"><?php echo esc_html( $curso['cta'] ); ?></a>
+								<div class="curso-cta-row">
+									<a href="#" class="btn btn-coral btn-sm"><?php echo esc_html( $curso['cta'] ); ?></a>
+									<a href="#" class="btn-detalles"><span class="plus-icon">+</span> <?php esc_html_e( 'Detalles', 'st-rrpp' ); ?></a>
+								</div>
 							</div>
 						</div>
 					</article>

@@ -231,9 +231,20 @@ body_class( 'has-mobile-buybar' );
 					</a>
 					<div class="curso-body">
 						<h3><a href="<?php echo esc_url( $related->get_permalink() ); ?>"><?php echo esc_html( $related->get_name() ); ?></a></h3>
+						<?php $related_meta = strrpp_course_card_meta( $related_id ); ?>
+						<?php if ( ! empty( $related_meta ) ) : ?>
+							<div class="curso-meta data">
+								<?php foreach ( $related_meta as $dato ) : ?>
+									<span><?php echo esc_html( $dato ); ?></span>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
 						<div class="curso-footer">
 							<div class="curso-price data"><?php echo wp_kses_post( $related->get_price_html() ); ?></div>
-							<a href="<?php echo esc_url( $related->get_permalink() ); ?>" class="btn btn-coral btn-sm"><?php esc_html_e( 'Ver curso', 'st-rrpp' ); ?></a>
+							<div class="curso-cta-row">
+								<a href="<?php echo esc_url( $related->add_to_cart_url() ); ?>" class="btn btn-coral btn-sm"><?php esc_html_e( 'Comprar curso', 'st-rrpp' ); ?></a>
+								<a href="<?php echo esc_url( $related->get_permalink() ); ?>" class="btn-detalles"><span class="plus-icon">+</span> <?php esc_html_e( 'Detalles', 'st-rrpp' ); ?></a>
+							</div>
 						</div>
 					</div>
 				</article>
